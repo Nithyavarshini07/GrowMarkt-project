@@ -14,7 +14,7 @@
 /* LEFT */
 .left {
   flex: 1;
-  padding: 60px;
+  padding: 80px;
   background: linear-gradient(135deg, #eef2f7, #dff3e6);
 }
 
@@ -46,19 +46,22 @@
 
 .feature {
   display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
+ align-items: flex-start; /* Aligns icon with the top of the text */
+  gap: 20px;               /* Increased gap to match the image spacing */
+  margin-bottom: 32px;
 }
 
 .icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+  width: 52px;             /* Slightly larger icons to match the design scale */
+  height: 52px;
+  min-width: 52px;         /* Prevents shrinking in flexbox */
+  border-radius: 14px;     /* Smoother, more modern rounding */
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .dark {
@@ -70,12 +73,15 @@
 }
 
 .feature h4 {
-  font-size: 16px;
-}
+font-size: 18px;
+  margin-bottom: 4px;      /* Tightens the gap between title and desc */
+  color: #0a1f33;}
 
 .feature p {
-  font-size: 13px;
-  color: #666;
+  font-size: 14px;
+  line-height: 1.5;        /* Better readability */
+  color: #64748b;          /* A softer slate gray */
+  max-width: 320px;
 }
 
 /* TESTIMONIAL */
