@@ -15,26 +15,31 @@ body, html {
 
 .login-container {
   display: flex;
-  min-height: 100vh;
-  padding: 40px 80px;
+  min-height: 100vh;   /* ✅ allows content to grow */
+  overflow: visible;   /* ✅ prevents clipping */
+  padding: 0; /* ✅ REMOVE side spacing */
   position: relative;
   background: linear-gradient(135deg, #ffffff 60%, #eef2ff 100%);
 }
+
+
 
 /* Info Section */
 .info-section {
   flex: 1.2;
   display: flex;
   flex-direction: column;
-  /* This creates the soft green/blue glow behind the card */
-  background: linear-gradient(135deg, #e6f9f0 0%, #ffffff 50%); 
-  padding: 60px;
+  background: linear-gradient(135deg, #e6f9f0 0%, #ffffff 50%);
+  padding: 40px 60px; /* ✅ move padding here */
+  justify-content: flex-start;
 }
 
 .logo {
+  position: absolute;
+  top: 30px;
+  left: 40px;
   font-weight: bold;
   font-size: 1.2rem;
-  margin-bottom: 60px;
 }
 
 .hero-content {
@@ -42,6 +47,7 @@ body, html {
   flex-direction: column;
   align-items: flex-start; /* Forces everything to the hard left */
   text-align: left;
+  margin-top: 40px;
 }
 
 
@@ -65,13 +71,14 @@ body, html {
   max-width: 460px; 
   margin: 0 0 50px 0; /* Creates that specific gap before the icons start */
   padding: 0; /* Removes any internal padding that might cause offset */
+  margin-bottom: 30px; /* was 50px */
 }
 
 .feature-item {
   display: flex;
   align-items: flex-start; /* Keeps icons at the top of their respective text block */
   gap: 20px; /* Space between icon and text */
-  margin-bottom: 40px;
+  margin-bottom: 25px; /* was 40px */
   width: 100%;
 }
 
@@ -117,9 +124,10 @@ body, html {
 }
 /* 2. The Card itself needs to be solid white with a clear shadow */
 .testimonial-card {
-  margin-top: 50px;
+  margin-top: 40px; /* increase from 25px */
+  padding: 25px 30px; /* slightly tighter */
   background: #ffffff; /* Must be solid white */
-  padding: 35px 45px;
+  
   border-radius: 12px;
   
   /* This shadow creates the 'box' look without a heavy border */
@@ -189,14 +197,14 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 40px 60px; /* ✅ move padding here */
 }
 
 .login-card {
   background: #ffffff;
   width: 100%;
   max-width: 460px; /* Precise width of the white box */
-  padding: 50px 60px; /* Deep internal padding for that "airy" look */
+  padding: 35px 40px; /* was 50px 60px */
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05); /* Soft, large shadow */
   text-align: left;
@@ -213,12 +221,12 @@ body, html {
 .subtitle {
   color: #64748b;
   font-size: 1rem;
-  margin-bottom: 40px;
+  margin-bottom: 25px; /* was 40px */
 }
 
 /* Input Fields */
 .input-group {
-  margin-bottom: 24px;
+  margin-bottom: 18px; /* was 24px */
 }
 
 .label-row {
@@ -257,7 +265,7 @@ body, html {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 20px; /* was 30px */
 }
 
 .checkbox-group label {
@@ -276,7 +284,7 @@ body, html {
   font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
-  margin-bottom: 30px;
+   margin-bottom: 20px; /* was 30px */
   transition: opacity 0.2s;
 }
 
@@ -305,7 +313,7 @@ body, html {
 
 /* Bottom Link */
 .signup-link {
-  margin-top: 40px;
+  margin-top: 25px; /* was 40px */
   text-align: center;
   font-size: 0.95rem;
   color: #64748b;
@@ -319,17 +327,18 @@ body, html {
 /* Footer */
 .page-footer {
   position: absolute;
-  bottom: 20px;
-  left: 80px;
-  right: 80px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.7rem;
-  color: #999;
+  margin-top: 40px;
+  bottom: 10px;
+  left: 40px;   /* was 60px */
+  right: 40px;  /* was 60px */
+  font-size: 0.65rem;
 }
 
 .footer-links a {
   margin-left: 20px;
   text-decoration: none;
   color: #999;
+}
+.hero-content h1 {
+  font-size: 2.4rem; /* was 3rem */
 }
