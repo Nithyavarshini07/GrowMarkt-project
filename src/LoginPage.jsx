@@ -1,7 +1,7 @@
 import React from 'react';
 import './LoginPage.css';
 import { useNavigate } from "react-router-dom";
-
+import ResetPassword from "./ResetPassword";
 
 const LoginPage = () => {
 
@@ -69,7 +69,13 @@ const LoginPage = () => {
             <div className="input-group">
               <div className="label-row">
                 <label>PASSWORD</label>
-                <a href="#" className="forgot-password">Forgot password?</a>
+                <span 
+  className="forgot-password"
+  onClick={() => navigate("/reset-password")}
+  style={{ cursor: "pointer" }}
+>
+  Forgot password?
+</span>
               </div>
               <input type="password" placeholder="••••••••" />
             </div>
