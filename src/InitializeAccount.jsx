@@ -1,0 +1,89 @@
+import React from "react";
+import "./InitializeAccount.css";
+
+const InitializeAccount = () => {
+  return (
+    <div className="container">
+      
+      {/* LEFT SECTION */}
+      <div className="left">
+        <h3 className="logo">GrowMarkt</h3>
+
+        <h1 className="title">
+          Elevate your data to <br />
+          <span>editorial precision.</span>
+        </h1>
+
+        <p className="desc">
+          Unlock high-fidelity social intelligence designed for executive decision-making.
+          Move beyond basic tracking into the realm of curated, actionable data precision.
+        </p>
+
+        <div className="features">
+          <div className="feature">
+            <div className="icon dark">hub</div>
+            <div>
+              <h4>Spectral Clustering</h4>
+              <p>Refining digital footprints through advanced algorithmic precision.</p>
+            </div>
+          </div>
+
+          <div className="feature">
+            <div className="icon green">layers</div>
+            <div>
+              <h4>Dimensional Analysis</h4>
+              <p>Deep-tier performance tracking across multi-faceted digital ecosystems.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="testimonial">
+          <p>
+            "The interface has fundamentally transformed our reporting culture, providing
+            the clarity needed for global strategy."
+          </p>
+          <div className="user">
+            <div className="avatar"></div>
+            <div>
+              <h5>Marcus Thorne</h5>
+              <span>CHIEF STRATEGY OFFICER, NEXUS GLOBAL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* RIGHT SECTION */}
+      <div className="right">
+        <div className="card">
+          <h2>Initialize Account</h2>
+          <p className="trial">Start your 14-day editorial trial.</p>
+
+          <input placeholder="Jane Cooper" />
+          <input placeholder="Acme Global" />
+          <input placeholder="jane@company.com" />
+          <input type="password" placeholder="••••••••" />
+
+          <div className="checkbox">
+            <input type="checkbox" />
+            <span>I agree to the Terms of Service and Privacy Policy.</span>
+          </div>
+
+          <button className="btn">CREATE ACCOUNT</button>
+
+          <p className="or">OR SIGN UP WITH</p>
+
+          <div className="socials">
+            <button className="google">Google</button>
+            <button className="linkedin">LinkedIn</button>
+          </div>
+
+          <p className="login">
+            Already part of the network? <span>Log in</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default InitializeAccount;

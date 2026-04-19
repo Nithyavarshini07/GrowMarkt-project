@@ -1,7 +1,13 @@
 import React from 'react';
 import './LoginPage.css';
+import { useNavigate } from "react-router-dom";
+
 
 const LoginPage = () => {
+
+  const navigate = useNavigate();
+
+
   return (
     <div className="login-container">
       {/* Left Side: Branding & Info */}
@@ -86,8 +92,14 @@ const LoginPage = () => {
           </div>
 
           <p className="signup-link">
-            New to GrowMarkt? <a href="#">Create an account</a>
-          </p>
+  New to GrowMarkt?{" "}
+  <span 
+    onClick={() => navigate("/create-account")}
+    style={{ cursor: "pointer", fontWeight: "600" }}
+  >
+    Create an account
+  </span>
+</p>
         </div>
       </section>
 
