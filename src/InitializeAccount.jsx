@@ -78,8 +78,11 @@ const InitializeAccount = () => {
           </div>
 
           <p className="login">
-            Already part of the network? <span>Log in</span>
-          </p>
+  Already part of the network?{" "}
+  <span onClick={() => window.location.href = "/"}>
+    Log in
+  </span>
+</p>
         </div>
       </div>
     </div>
