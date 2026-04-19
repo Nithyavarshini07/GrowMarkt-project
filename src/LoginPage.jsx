@@ -1,13 +1,9 @@
 import React from 'react';
 import './LoginPage.css';
-import { useNavigate } from "react-router-dom";
-import ResetPassword from "./ResetPassword";
+import { Link } from "react-router-dom";
+
 
 const LoginPage = () => {
-
-  const navigate = useNavigate();
-
-
   return (
     <div className="login-container">
       {/* Left Side: Branding & Info */}
@@ -22,35 +18,42 @@ const LoginPage = () => {
           </p>
 
           <div className="feature-item">
-            <div className="icon-box dark">
-              <i className="feature-icon">S</i> 
-            </div>
-            <div>
-              <h3>Spectral Clustering</h3>
-              <p>Refining digital footprints through advanced algorithmic precision.</p>
-            </div>
-          </div>
+<div className="icon-box dark">
+   <img src="/assets/spectral.png" alt="Spectral" className="feature-img" /> 
+  </div>
+  <div className="feature-text">
+    <h3>Spectral Clustering</h3>
+    <p>Refining digital footprints through advanced algorithmic precision.</p>
+  </div>
+</div>
 
-          <div className="feature-item">
-            <div className="icon-box green">
-              <i className="feature-icon">D</i>
-            </div>
-            <div>
-              <h3>Dimensional Analysis</h3>
-              <p>Deep-tier performance tracking across multi-faceted digital ecosystems.</p>
-            </div>
-          </div>
+<div className="feature-item">
+  <div className="icon-box green">
+    <img src="/assets/dimension.png" alt="Dimension" className="feature-img" />
+  </div>
+  <div className="feature-text">
+    <h3>Dimensional Analysis</h3>
+    <p>Deep-tier performance tracking across multi-faceted digital ecosystems.</p>
+  </div>
+</div>
 
           <div className="testimonial-card">
-            <p>"The interface has fundamentally transformed our reporting culture, providing the clarity needed for global strategy."</p>
-            <div className="author">
-              <div className="avatar"></div>
-              <div>
-                <strong>Marcus Thorne</strong>
-                <span>CHIEF STRATEGY OFFICER, NEXUS GLOBAL</span>
-              </div>
-            </div>
-          </div>
+  <p>
+    "The interface has fundamentally transformed our reporting culture,
+    providing the clarity needed for global strategy."
+  </p>
+
+  <div className="author">
+    <div className="avatar">
+      <img src="/assets/chief.jpg" alt="Marcus Thorne" className="avatar-img" />
+    </div>
+
+    <div>
+      <strong>Marcus Thorne</strong>
+      <span>CHIEF STRATEGY OFFICER, NEXUS GLOBAL</span>
+    </div>
+  </div>
+</div>
         </div>
       </section>
 
@@ -69,13 +72,9 @@ const LoginPage = () => {
             <div className="input-group">
               <div className="label-row">
                 <label>PASSWORD</label>
-                <span 
-  className="forgot-password"
-  onClick={() => navigate("/reset-password")}
-  style={{ cursor: "pointer" }}
->
+                <Link to="/reset-password" className="forgot-password">
   Forgot password?
-</span>
+</Link>
               </div>
               <input type="password" placeholder="••••••••" />
             </div>
@@ -92,19 +91,20 @@ const LoginPage = () => {
             <span>OR CONTINUE WITH</span>
           </div>
 
-          <div className="social-login">
-            <button className="social-btn">GOOGLE</button>
-            <button className="social-btn">LINKEDIN</button>
-          </div>
+<div className="social-login">
+  <button type="button" className="social-btn">
+    <img src="/assets/google.png" alt="Google" className="social-icon" />
+    GOOGLE
+  </button>
 
-          <p className="signup-link">
+  <button type="button" className="social-btn">
+    <img src="/assets/linkedin.png" alt="LinkedIn" className="social-icon" />
+    LINKEDIN
+  </button>
+</div>
+<p className="signup-link">
   New to GrowMarkt?{" "}
-  <span 
-    onClick={() => navigate("/create-account")}
-    style={{ cursor: "pointer", fontWeight: "600" }}
-  >
-    Create an account
-  </span>
+  <Link to="/create-account">Create an account</Link>
 </p>
         </div>
       </section>
@@ -112,7 +112,9 @@ const LoginPage = () => {
       {/* Global Footer */}
       <footer className="page-footer">
         <div className="footer-left">
-          <strong>GrowMarkt</strong> © 2024 GROWMARKT INC. EDITORIAL PRECISION IN DATA.
+          <strong>GrowMarkt</strong> <span className="footer-text">
+  © 2024 GROWMARKT INC. EDITORIAL PRECISION IN DATA.
+</span>
         </div>
         <div className="footer-links">
           <a href="#">PRIVACY POLICY</a>

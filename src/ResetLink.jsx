@@ -1,5 +1,5 @@
 import React from "react";
-import "./LoginPage.css"; // reuse same CSS
+import "./ResetLinK.css"; // reuse same CSS
 import { useNavigate } from "react-router-dom";
 
 const ResetPassword = () => {
@@ -23,25 +23,29 @@ const ResetPassword = () => {
             of brands that treat social intelligence as a financial-grade asset.
           </p>
 
-          <div className="feature-item">
-            <div className="icon-box dark"></div>
-            <div>
-              <h3>Spectral Analysis</h3>
-              <p>
-                Real-time sentiment vectoring for high-velocity teams.
-              </p>
-            </div>
-          </div>
+         <div className="feature-item">
+  <div className="icon-box dark">
+    <img src="/assets/analysis.png" alt="Spectral Analysis" className="feature-img" />
+  </div>
+  <div>
+    <h3>Spectral Analysis</h3>
+    <p>
+      Real-time sentiment vectoring for high-velocity teams.
+    </p>
+  </div>
+</div>
 
-          <div className="feature-item">
-            <div className="icon-box green"></div>
-            <div>
-              <h3>Contextual Intelligence</h3>
-              <p>
-                Automated storytelling that decodes complex market signals.
-              </p>
-            </div>
-          </div>
+<div className="feature-item">
+  <div className="icon-box green">
+    <img src="/assets/contextual.png" alt="Contextual Intelligence" className="feature-img" />
+  </div>
+  <div>
+    <h3>Contextual Intelligence</h3>
+    <p>
+      Automated storytelling that decodes complex market signals.
+    </p>
+  </div>
+</div>
 
           <div className="testimonial-card">
             <p>
@@ -51,7 +55,9 @@ const ResetPassword = () => {
             </p>
 
             <div className="author">
-              <div className="avatar"></div>
+              <div className="avatar">
+      <img src="/assets/chief.jpg" alt="Marcus Thorne" className="avatar-img" />
+    </div>
               <div>
                 <strong>Sarah Kensington</strong>
                 <span>MARKETING DIRECTOR, STRATOS GLOBAL</span>
@@ -80,11 +86,11 @@ const ResetPassword = () => {
               <input type="password" placeholder="••••••••" />
             </div>
 
-            <div className="password-hint">
-              <span>• 8+ CHARACTERS</span>
-              <span>• SYMBOL</span>
-              <span>• NUMBER</span>
-            </div>
+<div className="password-hint">
+  <span>• 8+ CHARACTERS</span>
+  <span>• SYMBOL</span>
+  <span>• NUMBER</span>
+</div>
 
             <button className="sign-in-btn">
               UPDATE PASSWORD →
@@ -100,10 +106,18 @@ const ResetPassword = () => {
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* Global Footer */}
       <footer className="page-footer">
         <div className="footer-left">
-          <strong>GrowMarkt</strong> © 2024 GROWMARKT. EDITORIAL PRECISION.
+          <strong>GrowMarkt</strong> <span className="footer-text">
+  © 2024 GROWMARKT INC. EDITORIAL PRECISION IN DATA.
+</span>
+        </div>
+        <div className="footer-links">
+          <a href="#">PRIVACY POLICY</a>
+          <a href="#">TERMS OF SERVICE</a>
+          <a href="#">SECURITY</a>
+          <a href="#">HELP CENTER</a>
         </div>
       </footer>
     </div>

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
 :root {
   --primary-dark: #0a1f33;
   --accent-green: #15803d;
@@ -15,13 +16,11 @@ body, html {
 
 .login-container {
   display: flex;
-  min-height: 100vh;   /* ✅ allows content to grow */
-  overflow: visible;   /* ✅ prevents clipping */
-  padding: 0; /* ✅ REMOVE side spacing */
+  height: 100vh; /* Fixed height */
+  overflow: hidden; /* No more scrolling */
   position: relative;
-  background: linear-gradient(135deg, #ffffff 60%, #eef2ff 100%);
+  background: linear-gradient(105deg, #ffffff 65%, #f8fafc 65.1%);
 }
-
 
 
 /* Info Section */
@@ -29,17 +28,23 @@ body, html {
   flex: 1.2;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #e6f9f0 0%, #ffffff 50%);
-  padding: 40px 60px; /* ✅ move padding here */
+
+  background: 
+    radial-gradient(circle at bottom left, rgba(21, 128, 61, 0.18), transparent 40%),
+    linear-gradient(135deg, #e6f9f0 0%, #ffffff 55%);
+
   justify-content: flex-start;
+  box-sizing: border-box;
+  padding: 40px 60px 40px 100px;
 }
 
 .logo {
-  position: absolute;
-  top: 30px;
-  left: 40px;
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 700; /* Bold to match the image */
+  letter-spacing: -0.02em;
+  color: #0a1629;
+  margin-bottom: 10px;
 }
 
 .hero-content {
@@ -47,39 +52,46 @@ body, html {
   flex-direction: column;
   align-items: flex-start; /* Forces everything to the hard left */
   text-align: left;
-  margin-top: 40px;
+  margin-top: 15px;
+  margin-bottom: 60px;
 }
 
 
 .hero-content h1 {
-  font-size: 3rem;
-  color: var(--primary-dark);
-  line-height: 1.1;
+  font-family: 'Manrope', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.1; /* Tighter line height */
+  letter-spacing: -1.2px;
+  margin-top: 15px; /* Reduced from 40px */
+  margin-bottom: 15px; /* Reduced from 20px/40px */
 }
 
 .hero-content h1 span {
+  font-family: 'Manrope', sans-serif; /* Ensuring span inherits Manrope */
   color: var(--accent-green);
 }
 
 /* --- UPDATED SECTION FOR THE DESCRIPTION AND FEATURES --- */
 
 .description {
+  
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem; /* Slightly smaller font */
+  line-height: 1.5;
   color: #5e6c84;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  /* Adjust this width until "precision." drops to the 4th line exactly like the image */
-  max-width: 460px; 
-  margin: 0 0 50px 0; /* Creates that specific gap before the icons start */
-  padding: 0; /* Removes any internal padding that might cause offset */
-  margin-bottom: 30px; /* was 50px */
+  max-width: 440px;
+  margin-top: 15px;
+  margin-bottom: 25px; /* Reduced from 40px to pull features up */
 }
 
 .feature-item {
   display: flex;
-  align-items: flex-start; /* Keeps icons at the top of their respective text block */
+  align-items: flex-start;
   gap: 20px; /* Space between icon and text */
-  margin-bottom: 25px; /* was 40px */
-  width: 100%;
+  margin-bottom: 20px; /* Space between the two feature blocks */
+  padding-left: 3px;
+  margin-top: 20px; /* Subtle nudge to the right */
 }
 
 .icon-box {
@@ -89,23 +101,40 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0; /* Prevents the icon from squishing if text is long */
+  flex-shrink: 0;
+}
+
+.icon-box.dark {
+  background-color: #0a1629; /* Deep blue/black */
+}
+.icon-box.green {
+  background-color: #15803d; /* Forest green */
+}
+.feature-icon {
+  color: white;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .feature-item h3 {
-  margin: 0 0 4px 0; /* Tight gap between title and description */
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: #0a1629;
-  letter-spacing: -0.01em;
+  margin: 0; /* Remove default margins */
+  line-height: 1.2;
 }
 
 .feature-item p {
-  margin: 0;
+  font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   color: #64748b;
+  margin-top: 4px;
+  
+  margin: 4px 0 0 0; /* Tiny gap between title and subtitle */
   line-height: 1.5;
-  max-width: 360px; /* Controls the wrap of the small feature text */
+  max-width: 650px;
 }
 
 .feature-item h3 {
@@ -113,58 +142,74 @@ body, html {
   font-size: 1.1rem;
   font-weight: 700;
   color: #0f172a; /* Near-black for the feature title */
-  letter-spacing: -0.02em;
+  
+}
+.feature-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  align-items: center;
 }
 
-.feature-item p {
-  margin: 4px 0 0 0; /* Tiny gap between title and subtitle */
-  font-size: 0.9rem;
-  color: #64748b;
-  line-height: 1.4;
-}
 /* 2. The Card itself needs to be solid white with a clear shadow */
 .testimonial-card {
-  margin-top: 40px; /* increase from 25px */
-  padding: 25px 30px; /* slightly tighter */
-  background: #ffffff; /* Must be solid white */
+
+  margin-top: 15px; 
+  width: 100%;
+  max-width: 600px; 
+  padding: 20px 30px;
   
+  background: white;
   border-radius: 12px;
-  
-  /* This shadow creates the 'box' look without a heavy border */
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); 
-  
-  /* A very thin, light border helps define the edges */
-  border: 1px solid rgba(0, 0, 0, 0.02);
-  
-  max-width: 550px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box; /* Ensures padding doesn't break the width */
 }
 
 /* 3. The Quote Text */
 .testimonial-card p {
+  font-family: 'Inter', sans-serif;
   font-style: italic;
-  font-size: 1.25rem;
-  color: #748ba7; /* Soft blue-gray */
-  line-height: 1.6;
-  margin-bottom: 25px;
-  text-align: left;
+  font-size: 0.95rem;    /* Made smaller from 1.1rem/1.25rem */
+  color: #64748b;
+  line-height: 1.4;      /* Tighter line height */
+  margin-bottom: 15px;   /* Less space before author */
+  
 }
 
 .author {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
+}
+.author .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  overflow: hidden; /* This makes the image follow the rounded corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f5f9; /* If you see this gray, the path is still broken */
+}
+.avatar {
+  width: 36px;
+  height: 36px;
+  background-color: #f1f5f9;
+  border-radius: 6px;
+  overflow: hidden; /* Clips the image to the border radius */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.author .avatar {
-  width: 44px;
-  height: 44px;
-  background-color: #f1f5f9; /* Light background for the placeholder */
-  border-radius: 8px; /* Matches the square-ish rounding in the image */
-  overflow: hidden;
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This prevents the photo from looking squashed */
+  display: block;
 }
+
 
 /* If you are using an image, make it fit the box */
 .author .avatar img {
@@ -172,150 +217,210 @@ body, html {
   height: 100%;
   object-fit: cover;
 }
-
 .author strong {
   display: block;
-  font-size: 1rem;
-  font-weight: 800; /* Extra bold for the name */
+  font-size: 0.85rem;    /* Smaller name */
+  font-weight: 800;
   color: #0a1629;
-  margin-bottom: 2px;
 }
 
 .author span {
-  font-size: 0.75rem;
+  display: block;
+  font-size: 0.65rem;    /* Tiny subtext */
   font-weight: 700;
-  color: #64748b;
-  text-transform: uppercase; /* Ensures it stays in caps */
-  letter-spacing: 0.05em; /* Spaced out for professional look */
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* Form Section */
-/* --- UPDATED LOGIN CARD SECTION --- */
-
 .form-section {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 60px; /* ✅ move padding here */
+  padding: 20px; /* Reduced padding */
 }
 
 .login-card {
   background: #ffffff;
   width: 100%;
-  max-width: 460px; /* Precise width of the white box */
-  padding: 35px 40px; /* was 50px 60px */
+  max-width: 380px; /* Reduced from 460px */
+  padding: 25px 30px; /* Reduced from 35px 40px */
   border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.05); /* Soft, large shadow */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
   text-align: left;
 }
-
 .login-card h2 {
-  font-size: 2.2rem;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.8rem;
   font-weight: 800;
   color: #0a1629;
-  margin: 0 0 10px 0;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.02em; /* Keep headings slightly tight */
+  margin-bottom: 8px;
+}
+
+/* Fixes the typed text color only */
+.login-card input {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  caret-color: #000000;
+}
+
+/* Ensures it stays black while typing */
+.login-card input:focus {
+  color: #000000 !important;
 }
 
 .subtitle {
   color: #64748b;
-  font-size: 1rem;
-  margin-bottom: 25px; /* was 40px */
+  font-size: 0.9rem; /* Smaller font */
+  margin-bottom: 20px; /* Reduced gap */
 }
 
 /* Input Fields */
 .input-group {
-  margin-bottom: 18px; /* was 24px */
+  width: 100%; /* Ensures it fills the card */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns label and input to the left */
+  margin-bottom: 16px;
 }
-
 .label-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Pushes Label left and Link right */
   align-items: center;
-  margin-bottom: 10px;
+  width: 100%;
+  margin-bottom: 8px;
 }
 
+
 .input-group label {
-  font-size: 0.75rem;
-  font-weight: 800;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem; /* Small and clean */
+  font-weight: 700;
   color: #4b5563;
-  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  letter-spacing: 1.2px; /* Your specific spacing */
+  display: block;
+  margin-bottom: 8px;
 }
 
 .forgot-password {
   font-size: 0.75rem;
-  color: #166534; /* Dark green from the image */
-  text-decoration: none;
   font-weight: 700;
+  color: #15803d; /* Accent green */
+  text-decoration: none;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 15px 0; /* Adjust vertical spacing */
+  color: #94a3b8; /* Light gray color */
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #e2e8f0; /* Thin light line */
+}
+
+.divider span {
+  padding: 0 10px; /* Space between the text and the lines */
+  font-size: 0.65rem; /* Makes the text very small */
+  font-weight: 700;
+  letter-spacing: 0.05em; /* Spaced out for that professional look */
+  white-space: nowrap;
+  
 }
 
 .input-group input {
-  width: 100%;
-  padding: 16px;
+  width: 100%; /* Forces input to be full width of its container */
+  box-sizing: border-box; /* Crucial: prevents padding from pushing width beyond 100% */
+  padding: 14px 16px;
   border: none;
-  background-color: #f0f7ff; /* The specific light blue tint */
+  background-color: #f0f7ff;
   border-radius: 8px;
-  font-size: 1rem;
-  color: #1e293b;
+  font-family: 'Inter', sans-serif;
 }
-
 /* Checkbox */
 .checkbox-group {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 20px; /* was 30px */
+  gap: 8px;
+  width: 100%;
+  margin: 10px 0 20px 0;
 }
-
+.checkbox-group input[type="checkbox"] {
+  margin: 0; /* Removes default browser spacing */
+  cursor: pointer;
+}
 .checkbox-group label {
+  font-family: 'Inter', sans-serif;
   font-size: 0.85rem;
   color: #64748b;
+  cursor: pointer;
 }
-
 /* Sign In Button */
 .sign-in-btn {
   width: 100%;
-  padding: 18px;
+  padding: 15px;
   background-color: #0a1629; /* Deep dark blue */
   color: white;
   border: none;
   border-radius: 10px;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
-   margin-bottom: 20px; /* was 30px */
+   margin-bottom: 15px; /* was 30px */
   transition: opacity 0.2s;
+    font-family: 'Inter', sans-serif;
+  letter-spacing: 1.2px; /* Your specific spacing */
+  text-transform: uppercase;
 }
+ 
 
 /* Social Buttons */
 .social-login {
   display: flex;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 10px;
+  margin-top: 15px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.2px; /* Your specific spacing */
+  text-transform: uppercase;
 }
-
 .social-btn {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 14px;
+  gap: 8px; /* space between icon & text */
+  padding: 10px;
   background-color: #f0f7ff;
   border: none;
   border-radius: 8px;
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #1e293b;
   cursor: pointer;
+}
+
+.social-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
 }
 
 /* Bottom Link */
 .signup-link {
   margin-top: 25px; /* was 40px */
   text-align: center;
-  font-size: 0.95rem;
+  margin-top: 15px;
+  font-size: 0.85rem;
   color: #64748b;
 }
 
@@ -323,22 +428,51 @@ body, html {
   color: #0a1629;
   cursor: pointer;
 }
+/* Target the Link (anchor tag) specifically */
+.signup-link a {
+  color: #000000 !important; /* Forces it to black */
+  text-decoration: none;      /* Optional: removes the underline */
+  font-weight: 700;           /* Makes it bold like your "Log in" link */
+}
+
+/* Optional: Add a hover state so users know it's clickable */
+.signup-link a:hover {
+  text-decoration: underline;
+  color: #2563eb;             /* Changes to blue only when hovering */
+}
 
 /* Footer */
 .page-footer {
   position: absolute;
-  margin-top: 40px;
-  bottom: 10px;
-  left: 40px;   /* was 60px */
-  right: 40px;  /* was 60px */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 40px;
   font-size: 0.65rem;
+  box-sizing: border-box;
+
+  background: #ffffff; /* important for contrast */
+
+  border-top: 1px solid #e5e7eb; /* 👈 THIS is the line */
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
+}
+.footer-links {
+  display: flex;
+  gap: 20px;
 }
 
 .footer-links a {
-  margin-left: 20px;
   text-decoration: none;
   color: #999;
 }
 .hero-content h1 {
   font-size: 2.4rem; /* was 3rem */
+}
+.footer-text {
+  margin-left: 200px;
 }

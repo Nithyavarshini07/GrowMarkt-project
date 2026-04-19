@@ -108,7 +108,7 @@ body, html {
 
 /* TESTIMONIAL (MATCH LOGIN PAGE CARD STYLE) */
 .testimonial {
-  margin-top: 30px;
+  margin-top: 25px;
   padding: 25px 30px;
   background: #ffffff;
   border-radius: 12px;
@@ -122,6 +122,18 @@ body, html {
   font-size: 1.1rem;
   color: #748ba7;
   line-height: 1.6;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;   /* LIMIT TO 2 LINES */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+}
+
+.testimonial-card {
+  max-width: 700px;  /* increase from 550/600 */
+  width: 100%;
+  
 }
 
 .user {
@@ -161,23 +173,29 @@ body, html {
   font-weight: 800;
   color: #0a1629;
   margin-bottom: 8px;
+    font-family: 'Manrope', sans-serif;
+  font-size: 1.8rem; 
+    font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .trial {
+
+  font-size: 0.9rem;   /* was 1rem ❌ */
   color: #64748b;
-  font-size: 1rem;
+
   margin-bottom: 20px;
 }
 
 /* INPUTS */
 .card input {
   width: 100%;
-  padding: 16px;
   margin-bottom: 14px;
   border: none;
   border-radius: 8px;
   background-color: #f0f7ff;
-  font-size: 1rem;
+    font-size: 0.9rem;   /* was 1rem ❌ */
+  padding: 14px 16px;
 }
 
 /* CHECKBOX */
@@ -200,14 +218,17 @@ body, html {
   font-weight: 700;
   cursor: pointer;
   margin-bottom: 20px;
+   font-size: 0.9rem;   /* keep consistent */
+  letter-spacing: 1.2px; /* ADD */
+  text-transform: uppercase; 
 }
 
 /* OR */
 .or {
-  text-align: center;
-  font-size: 12px;
-  color: #888;
-  margin: 15px 0;
+  font-size: 0.65rem;  /* was 12px ❌ */
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
 }
 
 /* SOCIALS */
@@ -248,26 +269,64 @@ body, html {
   background-color: #15803d;
 }
 
-/* Password hint row */
 .password-hint {
-  display: flex;
-  gap: 15px;
-  font-size: 0.7rem;
-  color: #64748b;
-  margin-bottom: 20px;
-  margin-top: -5px;
+  display: flex !important;
+  gap: 10px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  color: #94a3b8 !important;
+  margin: 5px 0 15px 0 !important;
+}
+
+.password-hint span {
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: 0.05em;
 }
 
 /* Back to login */
 .back-link {
   text-align: center;
   margin-top: 20px;
-  font-size: 0.9rem;
   color: #0a1629;
   cursor: pointer;
+    font-size: 0.85rem;  /* slightly smaller */
+  font-weight: 700;
 }
 
 /* Slight tweak for reset page heading */
 .login-card h2 {
   font-size: 1.8rem;
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 40px;
+  font-size: 0.65rem;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #999;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
 }

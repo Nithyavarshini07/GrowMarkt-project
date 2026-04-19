@@ -21,22 +21,28 @@ const ResetPassword = () => {
         </p>
 
         <div className="features">
-          <div className="feature">
-            <div className="icon dark">⏱</div>
-            <div>
-              <h4>Strategic Recovery</h4>
-              <p>Point-in-time restoration for your entire data ecosystem.</p>
-            </div>
-          </div>
 
-          <div className="feature">
-            <div className="icon dark">🔒</div>
-            <div>
-              <h4>Secure Infrastructure</h4>
-              <p>Bank-level encryption protecting your historical data.</p>
-            </div>
-          </div>
-        </div>
+  <div className="feature">
+    <div className="icon dark">
+      <img src="/assets/strategic.png" alt="Strategic Recovery" className="feature-img" />
+    </div>
+    <div>
+      <h4>Strategic Recovery</h4>
+      <p>Point-in-time restoration for your entire data ecosystem.</p>
+    </div>
+  </div>
+
+  <div className="feature">
+    <div className="icon dark">
+      <img src="/assets/secure.png" alt="Secure Infrastructure" className="feature-img" />
+    </div>
+    <div>
+      <h4>Secure Infrastructure</h4>
+      <p>Bank-level encryption protecting your historical data.</p>
+    </div>
+  </div>
+
+</div>
 
         <div className="testimonial">
           <p>
@@ -81,6 +87,20 @@ const ResetPassword = () => {
 </p>
         </div>
       </div>
+       {/* Global Footer */}
+      <footer className="page-footer">
+        <div className="footer-left">
+          <strong>GrowMarkt</strong> <span className="footer-text">
+  © 2024 GROWMARKT INC. EDITORIAL PRECISION IN DATA.
+</span>
+        </div>
+        <div className="footer-links">
+          <a href="#">PRIVACY POLICY</a>
+          <a href="#">TERMS OF SERVICE</a>
+          <a href="#">SECURITY</a>
+          <a href="#">HELP CENTER</a>
+        </div>
+      </footer>
     </div>
   );
 };

@@ -9,6 +9,7 @@ const InitializeAccount = () => {
       <div className="left">
         <h3 className="logo">GrowMarkt</h3>
 
+ <div className="hero-content">
         <h1 className="title">
           Elevate your data to <br />
           <span>editorial precision.</span>
@@ -23,7 +24,7 @@ const InitializeAccount = () => {
           <div className="feature">
             <div className="icon dark">hub</div>
             <div>
-              <h4>Spectral Clustering</h4>
+              <h3>Spectral Clustering</h3>
               <p>Refining digital footprints through advanced algorithmic precision.</p>
             </div>
           </div>
@@ -37,21 +38,29 @@ const InitializeAccount = () => {
           </div>
         </div>
 
-        <div className="testimonial">
-          <p>
-            "The interface has fundamentally transformed our reporting culture, providing
-            the clarity needed for global strategy."
-          </p>
-          <div className="user">
-            <div className="avatar"></div>
-            <div>
-              <h5>Marcus Thorne</h5>
-              <span>CHIEF STRATEGY OFFICER, NEXUS GLOBAL</span>
-            </div>
-          </div>
-        </div>
-      </div>
+<div className="testimonial">
+  <p>
+    "The interface has fundamentally transformed our reporting culture,
+    providing the clarity needed for global strategy."
+  </p>
 
+  <div className="user">
+    <div className="avatar">
+      <img
+        src="/assets/chief.jpg"
+        alt="Marcus Thorne"
+        className="avatar-img"
+      />
+    </div>
+
+    <div>
+      <strong>Marcus Thorne</strong><br />
+      <span> CHIEF STRATEGY OFFICER, NEXUS GLOBAL</span>
+    </div>
+  </div>
+</div>
+      </div>
+</div>
       {/* RIGHT SECTION */}
       <div className="right">
         <div className="card">
@@ -63,21 +72,29 @@ const InitializeAccount = () => {
           <input placeholder="jane@company.com" />
           <input type="password" placeholder="••••••••" />
 
-          <div className="checkbox">
-            <input type="checkbox" />
-            <span>I agree to the Terms of Service and Privacy Policy.</span>
-          </div>
+<label className="checkbox">
+  <input type="checkbox" />
+  <span className="checkmark"></span>
+  <span>I agree to the Terms of Service and Privacy Policy.</span>
+</label>
 
           <button className="btn">CREATE ACCOUNT</button>
 
           <p className="or">OR SIGN UP WITH</p>
 
-          <div className="socials">
-            <button className="google">Google</button>
-            <button className="linkedin">LinkedIn</button>
-          </div>
+ <div className="social-login">
+  <button type="button" className="social-btn">
+    <img src="/assets/google.png" alt="Google" className="social-icon" />
+    GOOGLE
+  </button>
 
-          <p className="login">
+  <button type="button" className="social-btn">
+    <img src="/assets/linkedin.png" alt="LinkedIn" className="social-icon" />
+    LINKEDIN
+  </button>
+</div>
+
+  <p className="login">
   Already part of the network?{" "}
   <span onClick={() => window.location.href = "/"}>
     Log in
@@ -85,6 +102,21 @@ const InitializeAccount = () => {
 </p>
         </div>
       </div>
+{/* Global Footer */}
+      <footer className="page-footer">
+        <div className="footer-left">
+          <strong>GrowMarkt</strong><span className="footer-text">
+  © 2024 GROWMARKT INC. EDITORIAL PRECISION IN DATA.
+</span>
+        </div>
+        <div className="footer-links">
+          <a href="#">PRIVACY POLICY</a>
+          <a href="#">TERMS OF SERVICE</a>
+          <a href="#">SECURITY</a>
+          <a href="#">HELP CENTER</a>
+        </div>
+      </footer>
+      
     </div>
   );
 };
