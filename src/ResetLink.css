@@ -108,13 +108,14 @@ body, html {
 
 /* TESTIMONIAL (MATCH LOGIN PAGE CARD STYLE) */
 .testimonial {
-  margin-top: 25px;
-  padding: 25px 30px;
+  margin-top: 18px;
+  padding: 20px 30px;
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.02);
   max-width: 550px;
+  margin-left: 20px;
 }
 
 .testimonial p {
