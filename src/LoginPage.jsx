@@ -1,9 +1,15 @@
 import React from 'react';
 import './LoginPage.css';
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 
-const LoginPage = () => {
+  const LoginPage = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+        navigate("/dashboard"); // redirect
+  };
   return (
     <div className="login-container">
       {/* Left Side: Branding & Info */}
@@ -63,7 +69,7 @@ const LoginPage = () => {
           <h2>Welcome Back</h2>
           <p className="subtitle">Log in to your editorial dashboard.</p>
 
-          <form>
+          <form onSubmit={handleLogin}>
             <div className="input-group">
               <label>EMAIL ADDRESS</label>
               <input type="email" placeholder="curator@growmarkt.com" />

@@ -1,7 +1,12 @@
 import React from "react";
 import "./InitializeAccount.css";
+import { useNavigate } from "react-router-dom";
 
 const InitializeAccount = () => {
+  const navigate = useNavigate();
+  const handleCreateAccount = () => {
+      navigate("/dashboard"); // redirect after account creation
+};
   return (
     <div className="container">
       
@@ -78,7 +83,9 @@ const InitializeAccount = () => {
   <span>I agree to the Terms of Service and Privacy Policy.</span>
 </label>
 
-          <button className="btn">CREATE ACCOUNT</button>
+          <button className="btn" onClick={handleCreateAccount}>
+  CREATE ACCOUNT
+</button>
 
           <p className="or">OR SIGN UP WITH</p>
 

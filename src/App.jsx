@@ -2,9 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import LoginPage from "./LoginPage";
-import ResetPassword from "./ResetPassword"; // this is your "forgot password" page
-import ResetLink from "./ResetLink"; // ✅ NEW PAGE
+import ResetPassword from "./ResetPassword";
+import ResetLink from "./ResetLink";
 import InitializeAccount from "./InitializeAccount";
+import Dashboard from "./Dashboard"; // ✅ ADD THIS
 
 function App() {
   return (
@@ -12,13 +13,11 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage />} />
 
-        {/* Step 1: user enters email */}
         <Route path="/reset-password" element={<ResetPassword />} />
-
-        {/* Step 2: user sets new password */}
         <Route path="/reset-link" element={<ResetLink />} />
 
         <Route path="/create-account" element={<InitializeAccount />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );
