@@ -61,13 +61,12 @@ body, html {
   text-align: left;
   margin-top: 15px;
   margin-bottom: 60px;
-  
 }
-
 
 .hero-content h1 {
   font-family: 'Manrope', sans-serif;
-  font-size: 48px;
+
+  font-size: 2.4rem;
   font-weight: 800;
   line-height: 1.1; /* Tighter line height */
   letter-spacing: -1.2px;
@@ -96,12 +95,12 @@ body, html {
 .feature-item {
   display: flex;
   align-items: flex-start;
-  gap: 20px; /* Space between icon and text */
-  margin-bottom: 20px; /* Space between the two feature blocks */
+  gap: 18px;  
   padding-left: 3px;
-  margin-top: 20px; /* Subtle nudge to the right */
-}
 
+    margin-bottom: 12px; /* reduced */
+  margin-top: 14px;  /* Subtle nudge to the right */
+}
 .icon-box {
   width: 44px;
   height: 44px;
@@ -110,6 +109,7 @@ body, html {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  font-size: 16px; /* Same icon sizing as initialize page */
 }
 
 .icon-box.dark {
@@ -125,22 +125,13 @@ body, html {
   font-size: 1.1rem;
 }
 
-.feature-item h3 {
-  font-family: 'Manrope', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #0a1629;
-  margin: 0; /* Remove default margins */
-  line-height: 1.2;
-}
-
 .feature-item p {
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   color: #64748b;
   margin-top: 4px;
   
-  margin: 4px 0 0 0; /* Tiny gap between title and subtitle */
+   margin: 4px 0 0 0; /* Tiny gap between title and subtitle */
   line-height: 1.5;
   max-width: 650px;
 }
@@ -149,14 +140,28 @@ body, html {
   margin: 0;
   font-size: 1.1rem;
   font-weight: 700;
+
   color: #0f172a; /* Near-black for the feature title */
-  
+  margin: 0; /* Remove default margins */
+  line-height: 1.2;
 }
 .feature-img {
   width: 24px;
   height: 24px;
   object-fit: contain;
   align-items: center;
+}
+
+.feature-item .icon-box {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 /* 2. The Card itself needs to be solid white with a clear shadow */
@@ -369,12 +374,6 @@ body, html {
   color: #000000 !important;
 }
 
-.subtitle {
-  color: #64748b;
-  font-size: 0.9rem; /* Smaller font */
-  margin-bottom: 20px; /* Reduced gap */
-}
-
 /* Input Fields */
 .input-group {
   width: 100%; /* Ensures it fills the card */
@@ -566,9 +565,6 @@ body, html {
 .footer-links a {
   text-decoration: none;
   color: #999;
-}
-.hero-content h1 {
-  font-size: 2.4rem; /* was 3rem */
 }
 .footer-text {
   margin-left: 200px;

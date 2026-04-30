@@ -27,27 +27,24 @@ body {
 }
 
 /* SIDEBAR */
-.sidebar {
-  width: 240px;
-  background: #ffffff;
-  border-right: 1px solid #e5e7eb;
-  padding: 20px;
 
-  display: flex;
-  flex-direction: column;
-
-  height: 100vh;        /* keeps sidebar full height */
-  position: sticky;     /* stays fixed while page scrolls */
-  top: 0;
-}
 .sidebar ul {
   list-style: none;
   margin-top: 40px;
 }
 .sidebar nav {
-  margin-top: -20px; /* reduce this if it's too far down */
+  margin-top: 12px; /* reduce this if it's too far down */
 }
 
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 .sidebar li {
   padding: 10px 12px;
   color: #94a3b8;
@@ -60,7 +57,23 @@ body {
   border-radius: 8px;
   transition: all 0.2s;
 }
+.sidebar nav ul li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 1;
+  padding: 12px;
+  border-radius: 8px;
 
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  color: #64748b;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
 .sidebar li.active {
   background: #ecfdf5;
   color: #10b981;
@@ -80,6 +93,7 @@ body {
 
 /* LOGO SECTION */
 /* Sidebar basics */
+
 .sidebar {
   width: 260px;
   height: 100vh;
@@ -88,8 +102,9 @@ body {
   flex-direction: column;
   padding: 40px 24px;
   border-right: 1px solid #f1f5f9;
+  position: sticky;
+  top: 0;
 }
-
 /* THE FIX: Forced Vertical Stacking */
 .brand-header {
   display: table !important; /* Forces a formal structural flow */
@@ -99,23 +114,23 @@ body {
 }
 
 .brand-subtitle {
-  display: table-row !important; /* This creates the first "floor" */
-  color: #94A3B8 !important;
-  font-family: 'Inter', sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.15em !important;
-  line-height: 2 !important; /* Adds natural breathing room */
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #94A3B8;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 4px;
 }
 
 .brand-main {
-  display: table-row !important; /* This creates the second "floor" */
-  color: #0F172A !important;
-  font-family: 'Inter', sans-serif !important;
-  font-size: 26px !important;
-  font-weight: 800 !important;
-  line-height: 1.2 !important;
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: #0F172A;
+  
 }
 
 /* Nav Styles - Semi-Bold 600 */
@@ -213,9 +228,8 @@ nav ul li img {
   width: 18px;
   height: 18px;
   object-fit: contain;
-  opacity: 0.7;           /* Dimmer for inactive items */
+  opacity: 0.7;           
 }
-
 /* Active State */
 nav ul li.active {
   color: #10b981;         /* Green text */
@@ -224,7 +238,8 @@ nav ul li.active {
 }
 
 nav ul li.active .nav-icon {
-  opacity: 1;             /* Full brightness for active icon */
+  opacity: 1;            
+
   filter: hue-rotate(90deg); /* Adjust if icon isn't already green */
 }
 /* HOVER */
@@ -439,13 +454,13 @@ nav ul li:hover {
   cursor: pointer;
 }
 
-/* active = dark */
+/* = dark */
 .toggle-btns .active {
   background: #0F172A;
   color: white;
 }
 
-/* inactive = light */
+
 .toggle-btns button:not(.active) {
   background: #F1F5F9;
   color: #64748B;
@@ -665,7 +680,7 @@ nav ul li:hover {
   justify-content: flex-end; 
   margin-top: 20px;
 
-  margin-left: 50px; 
+  margin-left: 40px; 
   width: 100%;
 
   max-width: 900px; 

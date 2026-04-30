@@ -1,8 +1,12 @@
 import React from "react";
 import "./Dashboard.css";
+import { useNavigate } from "react-router-dom";
+
+
 
 
 const Dashboard = () => {
+   const navigate = useNavigate();
 const today = new Date();
 
 const days = ["S", "M", "T", "W", "T", "F", "S"];
@@ -57,10 +61,10 @@ for (let d = 1; d <= totalDays; d++) {
               CAMPAIGN MANAGER
             </li>
 
-            <li>
-              <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
-              ANALYTICS
-            </li>
+<li onClick={() => navigate("/analytics")}>
+  <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
+  ANALYTICS
+</li>
 
             <li>
               <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
@@ -257,7 +261,12 @@ for (let d = 1; d <= totalDays; d++) {
 
   </div>
 
-  <button className="view-all">VIEW ALL ACTIVITY</button>
+<button
+  className="view-all"
+  onClick={() => navigate("/activity-feed")}
+>
+  VIEW ALL ACTIVITY
+</button>
 
 </div>
 </div>

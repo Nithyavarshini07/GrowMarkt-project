@@ -30,14 +30,10 @@ body {
 
 /* --- FIXED ROOT SECTION --- */
 #root {
-  width: 100%;             /* Changed from 1126px to 100% */
-  margin: 0;               /* Removed 'auto' to allow full bleed */
+  width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  border-inline: none;     /* REMOVED: This was the vertical line */
-  text-align: left;        /* Changed from 'center' to match the design */
+  margin: 0;
+  padding: 0;
 }
 
 /* Cleanup for headers to avoid overriding your Login styles */
