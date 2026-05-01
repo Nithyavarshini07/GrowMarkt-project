@@ -66,10 +66,10 @@ for (let d = 1; d <= totalDays; d++) {
   ANALYTICS
 </li>
 
-            <li>
-              <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
-              COMPETITORS
-            </li>
+<li onClick={() => navigate("/competitor-analysis")} style={{ cursor: "pointer" }}>
+  <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
+  COMPETITORS
+</li>
 
             <li>
               <img src="/assets/settings.png" alt="settings" className="nav-icon" />

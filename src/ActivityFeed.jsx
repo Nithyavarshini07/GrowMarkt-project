@@ -147,10 +147,14 @@ const formatDate = (date) =>
             Published
           </span>
 
-          <span className="af-filter">
-            <img src="/assets/act3.png" alt="competitors" />
-            Competitors
-          </span>
+<span
+  className="af-filter"
+  onClick={() => navigate("/competitor-analysis")}
+  style={{ cursor: "pointer" }}
+>
+  <img src="/assets/act3.png" alt="competitors" />
+  Competitors
+</span>
 
           <span className="af-filter">
             <img src="/assets/act4.png" alt="team" />

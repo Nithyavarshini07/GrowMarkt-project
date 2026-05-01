@@ -27,10 +27,10 @@ const Analytics = () => {
               <img src="/assets/analytics.png" className="nav-icon" alt="" />
               ANALYTICS
             </li>
-            <li>
-              <img src="/assets/competition.png" className="nav-icon" alt="" />
-              COMPETITORS
-            </li>
+<li onClick={() => navigate("/competitor-analysis")} style={{ cursor: "pointer" }}>
+  <img src="/assets/competition.png" className="nav-icon" alt="" />
+  COMPETITORS
+</li>
             <li>
               <img src="/assets/settings.png" className="nav-icon" alt="" />
               SETTINGS
@@ -67,7 +67,12 @@ const Analytics = () => {
     </div>
 
     <div className="view-toggle">
-      <button className="toggle-btn">DENSE</button>
+      <button
+  className="toggle-btn"
+  onClick={() => navigate("/analytics-dense")}
+>
+  DENSE
+</button>
       <button className="toggle-btn active">RELAXED</button>
     </div>
   </div>
@@ -163,7 +168,7 @@ const Analytics = () => {
       <img src="/assets/shield.png" className="shield-icon" />
       <h3>TOP PERFORMANCE NODES</h3>
     </div>
-    <span className="view-all">VIEW ALL</span>
+<span  className="view-all"  onClick={() => navigate("/performance-nodes")}>  VIEW ALL</span>
   </div>
 
   <div className="node-list">
