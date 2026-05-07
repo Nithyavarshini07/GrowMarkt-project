@@ -14,6 +14,7 @@ const Analytics = () => {
                   <span className="brand-main">GrowMarkt</span>
           <span className="brand-subtitle">THE DATA CURATOR</span>
   
+  
         </div>
 
         <nav>
