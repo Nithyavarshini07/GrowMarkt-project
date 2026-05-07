@@ -88,10 +88,14 @@ const CompetitorAnalysis = () => {
               <img src="/assets/dashboard.png" alt="dashboard" className="nav-icon" />
               DASHBOARD
             </li>
-            <li>
-              <img src="/assets/campaign.png" alt="campaign" className="nav-icon" />
-              CAMPAIGN MANAGER
-            </li>
+            <li onClick={() => navigate("/campaign-timeline")}>
+  <img
+    src="/assets/campaign.png"
+    alt="campaign"
+    className="nav-icon"
+  />
+  CAMPAIGN MANAGER
+</li>
             <li onClick={() => navigate("/analytics")}>
               <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
               ANALYTICS
@@ -100,14 +104,23 @@ const CompetitorAnalysis = () => {
               <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
               COMPETITORS
             </li>
-            <li>
-              <img src="/assets/settings.png" alt="settings" className="nav-icon" />
-              SETTINGS
-            </li>
+<li onClick={() => navigate("/settings")}>
+  <img
+    src="/assets/settings.png"
+    alt="settings"
+    className="nav-icon"
+  />
+  SETTINGS
+</li>
           </ul>
         </nav>
 
-        <button className="campaign-btn">+ NEW CAMPAIGN</button>
+<button
+  className="campaign-btn"
+  onClick={() => navigate("/add-new-competitor")}
+>
+  + NEW CAMPAIGN
+</button>
       </aside>
 
       <main className="main competitor-main">
@@ -170,8 +183,18 @@ const CompetitorAnalysis = () => {
               {leaderboardRows.map((row, index) => (
                 <tr
                   key={row.rank}
-                  className={`${index === 0 ? "highlight-row clickable-row" : ""}`}
-                  onClick={index === 0 ? () => navigate("/vortex-media") : undefined}
+                  className={`${
+                    row.name === "GrowMarkt (You)" || row.name === "Vortex Media"
+                      ? "clickable-row"
+                      : ""
+                  }`}
+                  onClick={
+                    row.name === "GrowMarkt (You)"
+                      ? () => navigate("/performance-metric")
+                      : row.name === "Vortex Media"
+                      ? () => navigate("/vortex-media")
+                      : undefined
+                  }
                 >
                   <td>{row.rank}</td>
                   <td>
@@ -266,7 +289,7 @@ const CompetitorAnalysis = () => {
         <section className="panel feed-panel">
           <div className="feed-head">
             <h4>Trending Competitor Posts Feed</h4>
-            <button type="button">EXPLORE ALL ↗</button>
+            <button type="button" onClick={() => navigate("/trending-feed")}>EXPLORE ALL ↗</button>
           </div>
 
           <div className="feed-list">

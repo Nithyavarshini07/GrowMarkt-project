@@ -9,7 +9,7 @@
 }
 
 body {
-  background: #F4F6FA;
+  background: #f4f6fb;
   font-family: 'Inter', sans-serif;
   overflow-y: auto;   /* enable vertical scroll */
 }
@@ -18,6 +18,12 @@ body {
 .dashboard {
   display: flex;
   min-height: 100vh;   /* instead of height */
+}
+
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
 }
 .notif-icon img {
   width: 20px;
@@ -96,13 +102,15 @@ body {
 
 .sidebar {
   width: 260px;
+  min-width: 260px;
   height: 100vh;
   background: #ffffff;
   display: flex;
   flex-direction: column;
   padding: 40px 24px;
   border-right: 1px solid #f1f5f9;
-  position: sticky;
+  position: fixed;
+  left: 0;
   top: 0;
 }
 /* THE FIX: Forced Vertical Stacking */
@@ -250,14 +258,33 @@ nav ul li:hover {
 /* MAIN */
 .main {
   flex: 1;
+  margin-left: 260px;
+  width: calc(100% - 260px);
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  overflow-y: auto;
+  overflow-x: hidden;
 
-  background-color: #F8FAFC;
+  background-color: #f4f6fb;
 
   min-height: 100vh;   /* important */
+}
+
+.page-content {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dashboard-layout .main {
+  padding: 0;
+}
+
+.dashboard-layout .topbar {
+  margin-bottom: 0;
 }
 
 
@@ -369,8 +396,8 @@ nav ul li:hover {
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin-top: 30px;
+  gap: 26px;
+  margin-top: 34px;
   justify-content: center;   /* ⬅ vertical center */
   align-items: center;       /* ⬅ horizontal center */
   text-align: center;   
@@ -380,30 +407,39 @@ nav ul li:hover {
 /* CARD */
 .card {
   background: white;
-  padding: 24px;
-  border-radius: 16px;
+  padding: 26px 22px;
+  border-radius: 12px;
   min-height: 150px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border: 1px solid #e7ecf4;
+  box-shadow: 0 2px 10px rgba(16, 24, 40, 0.04);
+  align-items: flex-start;
 }
 
 /* TEXT */
 .card h4 {
-  font-size: 13px; 
-  color: #94A3B8;
+  font-size: 10px;
+  font-weight: 800;
+  color: #9aa7b7;
   margin: 0;
-  letter-spacing: 0.05em;
-  margin-left: 30px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  margin-left: 0;
 }
 
 .card h2 {
-  font-size: 34px;
-  font-weight: 700;
+  font-size: 50px;
+  font-weight: 800;
   color: #0F172A;
-  margin: 6px 0;
-   margin-left: 30px;
+  margin: 8px 0 10px;
+  margin-left: 0;
+  line-height: 1;
+  transform: scale(0.5);
+  transform-origin: left center;
+  width: max-content;
 }
 
 /* CONTENT */
@@ -427,7 +463,7 @@ nav ul li:hover {
   margin-bottom: 20px;
 }
 .chart-title h3 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 800;
   margin: 0;
   font-family: 'Manrope', sans-serif;
@@ -435,9 +471,9 @@ nav ul li:hover {
 }
 
 .subtext {
-  font-size: 12px;
-  color: #94A3B8;
-  margin-top: 3px;
+  font-size: 13px;
+  color: #8193b0;
+  margin-top: 2px;
   font-family: 'Inter', sans-serif;
 }
 
@@ -450,7 +486,8 @@ nav ul li:hover {
   padding: 6px 10px;
   border-radius: 8px;
   border: none;
-  font-size: 11px;
+  font-size: 10px;
+  font-weight: 800;
   cursor: pointer;
 }
 
@@ -484,7 +521,7 @@ nav ul li:hover {
   position: relative;
 }
 
-.bar {
+.bars-container .bar {
   flex: 1;
   min-width: 18px;      /* keeps bars visible */
   background: #E5EEFF;
@@ -547,9 +584,11 @@ nav ul li:hover {
 }
 
 .activity-card {
-  background: #EFF4FF;
-  padding: 20px; 
+  background: #f9fafc;
+  padding: 22px; 
   border-radius: 12px;
+  border: 1px solid #e7ecf4;
+  box-shadow: 0 2px 10px rgba(16, 24, 40, 0.04);
 
   display: flex;
   flex-direction: column;
@@ -564,10 +603,12 @@ nav ul li:hover {
 
 .activity-card h3 {
   font-family: "Manrope", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 800;
   margin: 0;
   color: #0f172a;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
 }
 .activity-list {
   margin-top: 12px;      /* 👈 reduce */
@@ -618,7 +659,7 @@ nav ul li:hover {
   font-weight: 700;
   color: #0f172a;
   margin: 0;
-    font-size: 14px;  
+  font-size: 12px;
 }
 
 .act-desc {
@@ -626,28 +667,31 @@ nav ul li:hover {
   font-size: 0.9rem;
   margin: 4px 0;
   line-height: 1.4;
-  font-size: 13px; 
+  font-size: 12px; 
 }
 
 .act-time {
-  color: #94a3b8;
-  font-size: 0.75rem;
-  font-weight: 600;
-  font-size: 11px;
+  color: #9aa7b7;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 .view-all {
   margin-top: auto;
-  padding: 12px;
+  padding: 10px 12px;
   border: 1px solid #e2e8f0;
   background: transparent;
   border-radius: 8px;
 
   font-family: "Inter", sans-serif;
-  font-weight: 600;
+  font-weight: 800;
   cursor: pointer;
 
   color: #0f172a;   /* 👈 BLACK text fix */
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
 }
 
 .view-all:hover {
@@ -658,8 +702,8 @@ nav ul li:hover {
 .content-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 20px;
-  margin: 24px 0;
+  gap: 22px;
+  margin: 28px 0;
 
   align-items: start;   /* 👈 prevents stretching */
 }
@@ -670,9 +714,10 @@ nav ul li:hover {
 }
 .chart-card {
   background: white;
-  border-radius: 20px;
-  padding: 24px;
-  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  padding: 22px;
+  border: 1px solid #e7ecf4;
+  box-shadow: 0 2px 10px rgba(16, 24, 40, 0.04);
 }
 /* Platforms Section */
 .platforms-wrapper {
@@ -700,22 +745,27 @@ nav ul li:hover {
 
 .p-card {
   /* Internal padding makes the card look physically larger */
-  padding: 40px 24px; 
+  padding: 28px 22px; 
   background: white;
-  border-radius: 20px;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   /* Ensuring cards stretch to fill the grid height */
   height: 100%; 
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(16, 24, 40, 0.04);
+  border: 1px solid #e7ecf4;
 }
 
 .p-card h2 {
   /* Scale up the numbers to match the bigger card */
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 800;
-  margin: 15px 0;
+  margin: 10px 0;
+  line-height: 1;
+  transform: scale(0.5);
+  transform-origin: left center;
+  width: max-content;
 }
 .platforms-section {
   display: flex;
@@ -730,9 +780,10 @@ nav ul li:hover {
 
 .p-card .label {
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 800;
   color: #94a3b8;
-  letter-spacing: 1px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
 }
 
 .p-card.dark h2 {
@@ -743,62 +794,41 @@ nav ul li:hover {
   color: #94a3b8;
 }
 
-/* colors */
-.insta { background: #0f172a; }
-.linkedin { background: #2563eb; }
-.twitter { background: #0f172a; }
-.tiktok { background: #ec4899; }
+/* Platform progress bars (scoped so chart bars aren't affected) */
+.p-card .bar {
+  --fill: 0%;
+  --fill-color: #0f172a;
 
-/* 2. The Fill (Your specific colors) */
-.bar {
-  height: 100%;
-  border-radius: 10px;
-}
-/* Color + Width Combined */
-.insta { 
-  width: 75% !important; 
-  background-color: #006E2F !important; 
+  height: 8px;
+  width: 100%;
+  background: #f1f5f9;
+  border-radius: 999px;
+  margin-top: 12px;
+  position: relative;
+  overflow: hidden;
 }
 
-.linkedin { 
-  width: 45% !important; 
-  background-color: #2563EB !important; 
+.p-card .bar::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--fill);
+  background: var(--fill-color);
+  border-radius: 999px;
 }
 
-.twitter { 
-  width: 30% !important; 
-  background-color: #0B1C30 !important; 
+.p-card.dark .bar {
+  background: rgba(255, 255, 255, 0.12);
 }
 
-.tiktok { 
-  width: 90% !important; 
-  background-color: #EC4899 !important; 
-}
+.insta { --fill: 75%; --fill-color: #006E2F; }
+.linkedin { --fill: 45%; --fill-color: #2563EB; }
+.twitter { --fill: 30%; --fill-color: #0B1C30; }
+.tiktok { --fill: 90%; --fill-color: #EC4899; }
 
 .p-card.dark {
   background: #102A43;
   color: #FFFFFF;
-}
-.bar {
-  height: 6px;
-  width: 100%;
-  background: #f1f5f9;
-  border-radius: 10px;
-  margin-top: 15px;
-}
-
-.p-card.dark .bar {
-  background: rgba(255, 255, 255, 0.1); /* Lighter track for dark card */
-}
-
-/* Pseudo-element to act as the actual progress fill */
-.bar::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  border-radius: 10px;
 }
 
 /* Metric Trends */
@@ -807,10 +837,10 @@ nav ul li:hover {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
+  font-size: 13px;
   white-space: nowrap;
-   margin-left: 30px;
-   margin-top: 10px;
+  margin-left: 0;
+  margin-top: 8px;
 }
 
 /* ICON */
@@ -824,17 +854,18 @@ nav ul li:hover {
 /* COLORS */
 .positive {
   color: #006E2F !important; /* green */
-  font-weight: 700;
+  font-weight: 700 !important;
 }
 
 .negative {
   color: #BA1A1A !important; /* red */
-  font-weight: 700;
+  font-weight: 700 !important;
 }
 
 .trend-text {
   color: #94A3B8;
   font-weight: 400;
+  font-size: 12px;
 }
 
 .trend span {
@@ -860,12 +891,13 @@ nav ul li:hover {
   margin-top: 24px;
   align-items: flex-start;
   grid-template-columns: 1fr 1.2fr 3fr;  
-background: #FFFFFF;
+  background: #ffffff;
+  border: 1px solid #e7ecf4;
   width: 100%;
     max-width: 1400px;
     min-height: 450px;
-   border-radius: 14px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(16, 24, 40, 0.04);
  align-items: start;
 }
 
@@ -914,11 +946,13 @@ margin-left: 24px;
 
 .calendar-section h3{
     font-family: "Manrope", sans-serif;
-  font-weight: 700;
+  font-weight: 800;
   color: #0f172a;
   margin-top: 20px;
   margin-left: 20px;
-  font-size: 26px;
+  font-size: 14px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
 }
 h3,
 .schedule-section h3,
@@ -981,14 +1015,15 @@ body,
 
 
 .schedule-section h3 {
-  font-size: 18px;   /* reduced size */
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
   margin-bottom: 12px;
   color: #080808;
   font-family: 'Manrope' ,sans-serif;
     margin-top: 20px;
 
+  text-transform: uppercase;
 }
 
 .time-icon {
@@ -1007,7 +1042,7 @@ body,
 
 .schedule-card {
   background: #eff4ff;
-  padding: 16px;
+  padding: 18px;
   border-radius: 12px;
     width: 100%; 
       height: 110px;  
@@ -1017,7 +1052,7 @@ body,
   font-family: "Inter", sans-serif;
   font-weight: 700;
   margin-bottom: 6px;
-  font-size: 18px;
+  font-size: 14px;
   margin-top: 8px;
 }
 
@@ -1025,8 +1060,8 @@ body,
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: clamp(10px, 0.8vw, 12px);
-  color: #666;
+  font-size: 11px;
+  color: #7d899c;
 }
 
 .social {

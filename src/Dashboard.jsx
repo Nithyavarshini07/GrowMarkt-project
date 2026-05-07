@@ -56,10 +56,14 @@ for (let d = 1; d <= totalDays; d++) {
               DASHBOARD
             </li>
 
-            <li>
-              <img src="/assets/campaign.png" alt="campaign" className="nav-icon" />
-              CAMPAIGN MANAGER
-            </li>
+<li onClick={() => navigate("/campaign-timeline")}>
+  <img
+    src="/assets/campaign.png"
+    alt="campaign"
+    className="nav-icon"
+  />
+  CAMPAIGN MANAGER
+</li>
 
 <li onClick={() => navigate("/analytics")}>
   <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
@@ -71,10 +75,14 @@ for (let d = 1; d <= totalDays; d++) {
   COMPETITORS
 </li>
 
-            <li>
-              <img src="/assets/settings.png" alt="settings" className="nav-icon" />
-              SETTINGS
-            </li>
+<li onClick={() => navigate("/settings")}>
+  <img
+    src="/assets/settings.png"
+    alt="settings"
+    className="nav-icon"
+  />
+  SETTINGS
+</li>
           </ul>
         </nav>
 
