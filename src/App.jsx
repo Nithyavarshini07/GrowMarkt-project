@@ -27,6 +27,8 @@ import Billing from "./billing";
 import Help from "./help";
 import CampaignTimeline from "./campaignTimeline";
 import AddNewCompetitor from "./addNewCompetitor";
+import Notification from "./notification";
+
 
 function App() {
   return (
@@ -62,6 +64,7 @@ function App() {
         <Route path="/campaign-timeline" element={<CampaignTimeline />} />
         
 <Route path="/add-new-competitor" element={<AddNewCompetitor />} />
+<Route path="/notifications" element={<Notification />} />
       </Routes>
     </Router>
   );

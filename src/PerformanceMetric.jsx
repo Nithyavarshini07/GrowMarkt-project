@@ -91,6 +91,8 @@ const PerformanceMetric = () => {
         <button className="campaign-btn">+ NEW CAMPAIGN</button>
       </aside>
 
+      
+
       {/* MAIN */}
       <main className="main performance-main">
         {/* TOPBAR */}
@@ -124,6 +126,18 @@ const PerformanceMetric = () => {
           </div>
 
         </div>
+          <section className="pm-body">
+    <button
+      type="button"
+      className="mp-back"
+      onClick={() => navigate("/competitor-analysis")}
+    >
+      <span className="mp-back-arrow" aria-hidden="true">
+        ←
+      </span>
+      Back to Main Competitors
+    </button>
+  </section>
 
         <section className="pm-top-cards">
           <article className="pm-score-card current">
@@ -210,14 +224,45 @@ const PerformanceMetric = () => {
 
           <div className="pm-side-cards">
             <article className="pm-note wins">
-              <h4>🏆 STRATEGIC WINS</h4>
-              <p><strong>Video Dominance</strong><br />Your video retention rates are 24% higher than Vortex's average.</p>
-              <p><strong>Comment Sentiment</strong><br />92% positive sentiment in replies vs 68% for the competitor.</p>
+              <h4 className="pm-title">
+  <img src="/assets/cup.png" alt="cup" className="pm-title-icon" />
+  STRATEGIC WINS
+</h4>
+<p className="pm-point">
+  <img src="/assets/tick.png" alt="tick" className="pm-tick-icon" />
+  <span>
+    <strong>Video Dominance</strong><br />
+    Your video retention rates are 24% higher than Vortex's average.
+  </span>
+</p>
+             <p className="pm-point">
+  <img src="/assets/tick.png" alt="tick" className="pm-tick-icon" />
+  <span>
+    <strong>Comment Sentiment</strong><br />
+    92% positive sentiment in replies vs 68% for the competitor.
+  </span>
+</p>
             </article>
             <article className="pm-note moves">
-              <h4>⚡ COUNTER-MOVES</h4>
-              <p><strong>Increase Volume</strong><br />Increase LinkedIn post frequency by 30% to match Vortex's visibility.</p>
-              <p><strong>Target Ad Segments</strong><br />Redirect spend to "Growth Capital" keywords where Vortex is currently weak.</p>
+              <h4 className="pm-title">
+  <img src="/assets/energy.png" alt="energy" className="pm-title-icon" />
+  COUNTER-MOVES
+</h4>
+              <p className="pm-point">
+  <img src="/assets/arrow.png" alt="arrow" className="pm-tick-icon" />
+  <span>
+    <strong>Increase Volume</strong><br />
+    Increase LinkedIn post frequency by 30% to match Vortex's visibility.
+  </span>
+</p>
+
+<p className="pm-point">
+  <img src="/assets/arrow.png" alt="arrow" className="pm-tick-icon" />
+  <span>
+    <strong>Target Ad Segments</strong><br />
+    Redirect spend to "Growth Capital" keywords where Vortex is currently weak.
+  </span>
+</p>
             </article>
           </div>
         </section>

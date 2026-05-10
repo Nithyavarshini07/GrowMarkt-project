@@ -25,6 +25,16 @@ body {
   min-height: 100vh;
   width: 100%;
 }
+
+/* Keep fixed-sidebar pages in a two-column shell */
+.settings-page,
+.pnl-page,
+.pi-page,
+.mp-page {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
 .notif-icon img {
   width: 20px;
   height: 20px;
@@ -103,6 +113,7 @@ body {
 .sidebar {
   width: 260px;
   min-width: 260px;
+  flex: 0 0 260px;
   height: 100vh;
   background: #ffffff;
   display: flex;
@@ -112,6 +123,17 @@ body {
   position: fixed;
   left: 0;
   top: 0;
+}
+
+/* Reserve content space when sidebar is fixed */
+.sidebar + .main,
+.sidebar + .settings-main,
+.sidebar + .pnl-main,
+.sidebar + .pi-main,
+.sidebar + .mp-main {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  min-height: 100vh;
 }
 /* THE FIX: Forced Vertical Stacking */
 .brand-header {
@@ -273,9 +295,9 @@ nav ul li:hover {
 }
 
 .page-content {
-  padding: 0;
-  margin: 0;
   width: 100%;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -397,11 +419,13 @@ nav ul li:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 26px;
-  margin-top: 34px;
-  justify-content: center;   /* ⬅ vertical center */
-  align-items: center;       /* ⬅ horizontal center */
-  text-align: center;   
 
+  /* reduced top spacing */
+  margin-top: 8px;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* CARD */
@@ -888,7 +912,7 @@ nav ul li:hover {
 .bottom-section {
   display: flex;
   gap: 24px;
-  margin-top: 24px;
+    margin-top: 12px;
   align-items: flex-start;
   grid-template-columns: 1fr 1.2fr 3fr;  
   background: #ffffff;

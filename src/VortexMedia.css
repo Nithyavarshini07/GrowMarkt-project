@@ -11,7 +11,32 @@
   align-items: center;
   gap: 20px;
 }
+.vm-body {
+  padding: 4px 22px 10px;
+}
+.vm-back {
+  border: 0;
+  background: transparent;
+  color: #7a8ca8;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
 
+.vm-back:hover {
+  color: #102a43;
+}
+
+.vm-back-arrow {
+  font-size: 16px;
+  line-height: 16px;
+  margin-top: -1px;
+}
 .vortex-header-left {
   display: flex;
   align-items: center;

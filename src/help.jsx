@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
+import "./settings.css";
 import "./help.css";
 
 function IconDashboard(props) {
@@ -157,60 +158,56 @@ export default function Help() {
   const navigate = useNavigate();
 
   return (
-    <div className="dashboard-layout">
+    <div className="settings-page">
       <aside className="sidebar">
         <div className="brand-header">
-                  <span className="brand-main">GrowMarkt</span>
+          <span className="brand-main">GrowMarkt</span>
           <span className="brand-subtitle">THE DATA CURATOR</span>
-  
         </div>
 
         <nav>
           <ul>
-            <li onClick={() => navigate("/dashboard")} style={{ cursor: "pointer" }}>
+            <li onClick={() => navigate("/dashboard")}>
               <img src="/assets/dashboard.png" alt="dashboard" className="nav-icon" />
               DASHBOARD
             </li>
 
-<li onClick={() => navigate("/campaign-timeline")} style={{ cursor: "pointer" }}>
-  <img src="/assets/campaign.png" alt="campaign" className="nav-icon" />
-  CAMPAIGN MANAGER
-</li>
+            <li onClick={() => navigate("/campaign-timeline")}>
+              <img src="/assets/campaign.png" alt="campaign" className="nav-icon" />
+              CAMPAIGN MANAGER
+            </li>
 
-<li onClick={() => navigate("/analytics")} style={{ cursor: "pointer" }}>
-  <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
-  ANALYTICS
-</li>
+            <li onClick={() => navigate("/analytics")}>
+              <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
+              ANALYTICS
+            </li>
 
-<li onClick={() => navigate("/competitor-analysis")} style={{ cursor: "pointer" }}>
-  <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
-  COMPETITORS
-</li>
+            <li onClick={() => navigate("/competitor-analysis")} style={{ cursor: "pointer" }}>
+              <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
+              COMPETITORS
+            </li>
 
-<li className="active">
-  <img src="/assets/settings.png" alt="settings" className="nav-icon" />
-  SETTINGS
-</li>
+            <li className="active">
+              <img src="/assets/settings.png" alt="settings" className="nav-icon" />
+              SETTINGS
+            </li>
           </ul>
         </nav>
 
         <button className="campaign-btn">+ NEW CAMPAIGN</button>
       </aside>
 
-      <main className="main">
-        <div className="topbar">
-
-          <div className="search-container">
-            <span className="search-icon">
-              <img src="/assets/search.png" alt="search" />
+      <main className="settings-main">
+        <header className="settings-topbar">
+          <div className="settings-search">
+            <span className="settings-search-icon" aria-hidden="true">
+              <IconSearch />
             </span>
-            <input placeholder="Search insights..." />
+            <input placeholder="Search data..." />
           </div>
 
           <div className="user-profile">
-
             <div className="user-profile-left">
-
               <div className="notif-icon">
                 <img src="/assets/bell.png" alt="notification" />
                 <span className="dot"></span>
@@ -220,24 +217,18 @@ export default function Help() {
                 <p className="user-name">Alex Mercer</p>
                 <p className="user-role">PREMIUM CURATOR</p>
               </div>
-
             </div>
 
             <img src="/assets/alex.jpg" alt="avatar" className="avatar" />
-
           </div>
+        </header>
 
-        </div>
-
-        <div className="page-content">
-        <div className="help-main">
-
-        <section className="help-header">
+        <section className="settings-header">
           <h1>Support &amp; Help</h1>
           <p>Get the expert assistance you need to scale your market presence.</p>
         </section>
 
-        <section className="help-tabs" role="tablist" aria-label="Settings sections">
+        <section className="settings-tabs" role="tablist" aria-label="Settings sections">
           <button type="button" onClick={() => navigate("/settings")}>
             ACCOUNT &amp; TEAM
           </button>
@@ -247,7 +238,7 @@ export default function Help() {
           <button type="button" className="active">
             SUPPORT &amp; HELP
           </button>
-          <button type="button" className="help-tab-disabled">
+          <button type="button" onClick={() => navigate("/notifications")}>
             NOTIFICATIONS
           </button>
         </section>
@@ -264,7 +255,7 @@ export default function Help() {
                 </div>
                 <button type="button" className="help-primary-btn">
                   <span className="help-primary-ic" aria-hidden="true">
-                    <IconCalendar />
+                    <img src="/assets/sche.png" alt="Schedule" className="icon-calendar" />
                   </span>
                   SCHEDULE STRATEGIC CALL
                 </button>
@@ -281,7 +272,7 @@ export default function Help() {
                 </div>
                 <button type="button" className="help-secondary-btn">
                   <span className="help-secondary-ic" aria-hidden="true">
-                    <IconMail />
+                    <img src="/assets/contact.png" alt="Contact" className="icon-mail" />
                   </span>
                   CONTACT SUPPORT TEAM
                 </button>
@@ -297,8 +288,6 @@ export default function Help() {
             ALL GROWMARKT SYSTEMS OPERATIONAL
           </div>
         </section>
-        </div>
-        </div>
       </main>
     </div>
   );

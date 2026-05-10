@@ -188,95 +188,89 @@ export default function Settings() {
 
   const channels = useMemo(
     () => [
-      { key: "instagram", name: "Instagram", status: "ACTIVE", icon: "/assets/instagram.png" },
-      { key: "linkedin", name: "LinkedIn", status: "CONNECTED", icon: "/assets/linkedin2.png" },
+      { key: "instagram", name: "Instagram", status: "ACTIVE", icon: "/assets/insta.png" },
+      { key: "linkedin", name: "LinkedIn", status: "CONNECTED", icon: "/assets/linkedin3.png" },
       { key: "tiktok", name: "TikTok", status: "ACTIVE", icon: "/assets/black.png" },
     ],
     []
   );
 
   return (
-    <div className="dashboard-layout">
+    <div className="settings-page">
       <aside className="sidebar">
         <div className="brand-header">
-                  <span className="brand-main">GrowMarkt</span>
+          <span className="brand-main">GrowMarkt</span>
           <span className="brand-subtitle">THE DATA CURATOR</span>
-  
         </div>
 
         <nav>
           <ul>
-            <li onClick={() => navigate("/dashboard")} style={{ cursor: "pointer" }}>
+            <li onClick={() => navigate("/dashboard")}>
               <img src="/assets/dashboard.png" alt="dashboard" className="nav-icon" />
               DASHBOARD
             </li>
 
-<li onClick={() => navigate("/campaign-timeline")} style={{ cursor: "pointer" }}>
-  <img src="/assets/campaign.png" alt="campaign" className="nav-icon" />
-  CAMPAIGN MANAGER
-</li>
+            <li onClick={() => navigate("/campaign-timeline")}>
+              <img src="/assets/campaign.png" alt="campaign" className="nav-icon" />
+              CAMPAIGN MANAGER
+            </li>
 
-<li onClick={() => navigate("/analytics")} style={{ cursor: "pointer" }}>
-  <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
-  ANALYTICS
-</li>
+            <li onClick={() => navigate("/analytics")}>
+              <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
+              ANALYTICS
+            </li>
 
-<li onClick={() => navigate("/competitor-analysis")} style={{ cursor: "pointer" }}>
-  <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
-  COMPETITORS
-</li>
+            <li onClick={() => navigate("/competitor-analysis")} style={{ cursor: "pointer" }}>
+              <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
+              COMPETITORS
+            </li>
 
-<li className="active">
-  <img src="/assets/settings.png" alt="settings" className="nav-icon" />
-  SETTINGS
-</li>
+            <li className="active">
+              <img src="/assets/settings.png" alt="settings" className="nav-icon" />
+              SETTINGS
+            </li>
           </ul>
         </nav>
 
         <button className="campaign-btn">+ NEW CAMPAIGN</button>
       </aside>
 
-      <main className="main">
-        <div className="topbar">
+      <main className="settings-main">
+        <div className="settings-topbar">
 
-          <div className="search-container">
-            <span className="search-icon">
-              <img src="/assets/search.png" alt="search" />
-            </span>
-            <input placeholder="Search insights..." />
-          </div>
+  {/* SEARCH */}
+  <div className="settings-search">
+    <span className="settings-search-icon">
+      <IconSearch />
+    </span>
+    <input placeholder="Search data..." />
+  </div>
 
-          <div className="user-profile">
+  <div className="user-profile">
+    <div className="user-profile-left">
+      <div className="notif-icon">
+        <img src="/assets/bell.png" alt="notification" />
+        <span className="dot"></span>
+      </div>
 
-            <div className="user-profile-left">
+      <div className="profile-info">
+        <p className="user-name">Alex Mercer</p>
+        <p className="user-role">PREMIUM CURATOR</p>
+      </div>
+    </div>
 
-              <div className="notif-icon">
-                <img src="/assets/bell.png" alt="notification" />
-                <span className="dot"></span>
-              </div>
+    <img src="/assets/alex.jpg" alt="avatar" className="avatar" />
+  </div>
 
-              <div className="profile-info">
-                <p className="user-name">Alex Mercer</p>
-                <p className="user-role">PREMIUM CURATOR</p>
-              </div>
-
-            </div>
-
-            <img src="/assets/alex.jpg" alt="avatar" className="avatar" />
-
-          </div>
-
-        </div>
-
-        <div className="page-content">
-        <div className="settings-main">
+</div>
 
         <section className="settings-header">
           <h1>Account &amp; Team</h1>
-          <p>
-            Manage your editorial profile, connect channels, and access our intelligence support
-            team.
-          </p>
+         <p>
+  Manage your editorial profile, connect channels, and access our intelligence support
+  
+  team.
+</p>
         </section>
 
         <section className="settings-tabs" role="tablist" aria-label="Settings sections">
@@ -287,203 +281,203 @@ export default function Settings() {
           >
             ACCOUNT &amp; TEAM
           </button>
-<button
-  type="button"
-  className={activeTab === "billing" ? "active" : ""}
-  onClick={() => navigate("/billing")}
->
-  BILLING &amp; PAYMENT
-</button>
-<button
-  type="button"
-  className={activeTab === "support" ? "active" : ""}
-  onClick={() => navigate("/help")}
->
-  SUPPORT &amp; HELP
-</button>
           <button
             type="button"
-            className={activeTab === "notifications" ? "active" : ""}
-            onClick={() => setActiveTab("notifications")}
+            className={activeTab === "billing" ? "active" : ""}
+            onClick={() => navigate("/billing")}
           >
-            NOTIFICATIONS
+            BILLING &amp; PAYMENT
           </button>
+          <button
+            type="button"
+            className={activeTab === "support" ? "active" : ""}
+            onClick={() => {
+              setActiveTab("support");
+              navigate("/help");
+            }}
+          >
+            SUPPORT &amp; HELP
+          </button>
+<button
+  type="button"
+  className={activeTab === "notifications" ? "active" : ""}
+  onClick={() => navigate("/notifications")}
+>
+  NOTIFICATIONS
+</button>
         </section>
 
         <div className="settings-content">
-          <section className="settings-card settings-company">
-            <div className="settings-card-header">
-              <h2>Company Profile</h2>
-              <button type="button" className="settings-save">
-                SAVE CHANGES
-              </button>
+
+  <div className="settings-left-column">
+
+    {/* Company Profile */}
+    <section className="settings-card settings-company">
+      <div className="settings-card-header">
+        <h2>Company Profile</h2>
+        <button type="button" className="settings-save">
+          SAVE CHANGES
+        </button>
+      </div>
+
+      <div className="settings-company-body">
+     <div className="settings-logo">
+  <div className="settings-logo-box">
+    <img
+      src="/assets/com.png"
+      alt="Company Logo"
+      className="settings-company-image"
+    />
+  </div>
+
+<button
+  className="settings-logo-edit"
+  type="button"
+  aria-label="Edit logo"
+>
+  <img src="/assets/cam.png" alt="edit icon" />
+</button>
+</div>
+
+        <form
+          className="settings-form"
+          onSubmit={(e) => e.preventDefault()}
+        >
+          <div className="settings-grid2">
+            <div className="settings-field">
+              <label>COMPANY NAME</label>
+              <input defaultValue="Axiom Digital Media" />
             </div>
 
-            <div className="settings-company-body">
-              <div className="settings-logo">
-                <div className="settings-logo-box">
-                  <div className="settings-logo-mark">
-                    <div className="settings-logo-badge" />
-                    <div className="settings-logo-text">
-                      <div className="settings-logo-title">COMPANY</div>
-                      <div className="settings-logo-sub">SAVE YOUR</div>
-                    </div>
-                  </div>
-                </div>
-                <button className="settings-logo-edit" type="button" aria-label="Edit logo">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M4 7h4l2-2h4l2 2h4a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M12 18a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                    />
-                  </svg>
-                </button>
-              </div>
-
-              <form className="settings-form" onSubmit={(e) => e.preventDefault()}>
-                <div className="settings-grid2">
-                  <div className="settings-field">
-                    <label>COMPANY NAME</label>
-                    <input defaultValue="Axiom Digital Media" />
-                  </div>
-                  <div className="settings-field">
-                    <label>WEBSITE</label>
-                    <input defaultValue="https://axiom.media" />
-                  </div>
-                </div>
-
-                <div className="settings-field">
-                  <label>BRAND TAGLINE</label>
-                  <input defaultValue="Intelligence-driven growth for modern brands" />
-                </div>
-              </form>
+            <div className="settings-field">
+              <label>WEBSITE</label>
+              <input defaultValue="https://axiom.media" />
             </div>
-          </section>
-
-          <aside className="settings-card settings-channels">
-            <div className="settings-card-header">
-              <h2>Connected Channels</h2>
-            </div>
-
-            <div className="settings-channel-list">
-              {channels.map((c) => (
-                <div key={c.key} className="settings-channel">
-                  <div className="settings-channel-left">
-                    <div className={`settings-channel-icon ${c.key}`}>
-                      <img src={c.icon} alt="" />
-                    </div>
-                    <div className="settings-channel-meta">
-                      <div className="settings-channel-name">{c.name}</div>
-                      <div className="settings-channel-status">{c.status}</div>
-                    </div>
-                  </div>
-                  <button type="button" className="settings-disconnect">
-                    DISCONNECT
-                  </button>
-                </div>
-              ))}
-            </div>
-          </aside>
-        </div>
-
-        <section className="settings-card settings-team">
-          <div className="settings-card-header">
-            <h2>Team Management</h2>
-            <button type="button" className="settings-invite">
-              <span className="settings-invite-ic" aria-hidden="true">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M20 8v6"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M17 11h6"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </span>
-              INVITE MEMBER
-            </button>
           </div>
 
-          <div className="settings-table">
-            <div className="settings-tr settings-th">
-              <div>MEMBER</div>
-              <div>ROLE</div>
-              <div className="settings-cell-right">ACTION</div>
-            </div>
+          <div className="settings-field">
+            <label>BRAND TAGLINE</label>
+            <input defaultValue="Intelligence-driven growth for modern brands" />
+          </div>
+        </form>
+      </div>
+    </section>
 
-            <div className="settings-tr settings-td">
-              <div className="settings-member">
-                <div className="settings-member-avatar">A</div>
-                <div className="settings-member-meta">
-                  <div className="settings-member-name">Alex Rivera</div>
-                  <div className="settings-member-email">alex@axiom.media</div>
-                </div>
+    {/* Team Management INSIDE LEFT COLUMN */}
+    <section className="settings-card settings-team">
+      <div className="settings-card-header">
+        <h2>Team Management</h2>
+
+       <button type="button" className="settings-invite">
+  <span className="settings-invite-ic">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M4 20a8 8 0 0 1 16 0"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </span>
+
+  INVITE MEMBER
+</button>
+      </div>
+
+      <div className="settings-table">
+        <div className="settings-tr settings-th">
+          <div>MEMBER</div>
+          <div>ROLE</div>
+          <div className="settings-cell-right">ACTION</div>
+        </div>
+
+        <div className="settings-tr settings-td">
+          <div className="settings-member">
+            <div className="settings-member-avatar">
+  <img src="/assets/a.jpg" alt="user avatar" />
+</div>
+
+            <div className="settings-member-meta">
+              <div className="settings-member-name">
+                Alex Rivera
               </div>
 
-              <div>
-                <span className="settings-role-pill">Admin</span>
-              </div>
-
-              <div className="settings-cell-right">
-                <button type="button" className="settings-trash" aria-label="Remove member">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M3 6h18"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M10 11v6M14 11v6"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </button>
+              <div className="settings-member-email">
+                alex@axiom.media
               </div>
             </div>
           </div>
-        </section>
+
+          <div>
+            <span className="settings-role-pill">
+              Admin
+            </span>
+          </div>
+
+          <div className="settings-cell-right">
+            <button
+  type="button"
+  className="settings-trash"
+>
+  <img src="/assets/bin.png" alt="Delete" />
+</button>
+          </div>
         </div>
+      </div>
+    </section>
+
+  </div>
+
+  {/* Right side */}
+  <aside className="settings-card settings-channels">
+    <div className="settings-card-header">
+      <h2>Connected Channels</h2>
+    </div>
+
+    <div className="settings-channel-list">
+      {channels.map((c) => (
+        <div key={c.key} className="settings-channel">
+          <div className="settings-channel-left">
+
+            <div className={`settings-channel-icon ${c.key}`}>
+              <img src={c.icon} alt="" />
+            </div>
+
+            <div className="settings-channel-meta">
+              <div className="settings-channel-name">
+                {c.name}
+              </div>
+
+              <div className="settings-channel-status">
+                {c.status}
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            className="settings-disconnect"
+          >
+            DISCONNECT
+          </button>
         </div>
+      ))}
+    </div>
+  </aside>
+
+</div>
       </main>
     </div>
   );

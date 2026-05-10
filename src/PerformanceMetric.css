@@ -11,6 +11,36 @@
 .performance-page .topbar {
   margin-bottom: 8px;
 }
+.pm-body {
+  padding: 6px 0 10px;
+}
+.pm-body {
+  padding: 6px 0 10px;
+}
+
+.pm-back {
+  border: 0;
+  background: transparent;
+  color: #7a8ca8;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.pm-back:hover {
+  color: #102a43;
+}
+
+.pm-back-arrow {
+  font-size: 16px;
+  line-height: 16px;
+  margin-top: -1px;
+}
 
 .pm-top-cards {
   display: grid;
@@ -139,13 +169,12 @@
 .pm-tabs button {
   border: none;
   border-radius: 999px;
-  padding: 5px 10px;
-  font-size: 7px;
+  padding: 6px 12px;
+  font-size: 10px;
   font-weight: 800;
   background: #ffffff;
   color: #4a607f;
 }
-
 .pm-tabs .active {
   background: #072344;
   color: #fff;
@@ -183,14 +212,14 @@
 }
 
 .metric-col span {
-  font-size: 14px;
+  font-size: 15px;
   width: 16px;
 }
 
 .pm-table-card em {
   font-style: normal;
   margin-left: 8px;
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 700;
 }
 
@@ -203,9 +232,9 @@
 }
 
 .pm-table-card b {
-  font-size: 8px;
+  font-size: 9px;
   border-radius: 999px;
-  padding: 4px 10px;
+  padding: 5px 12px;
   letter-spacing: 0.05em;
 }
 
@@ -237,9 +266,9 @@
 }
 
 .pm-gap-card h3 {
-  margin: 0 0 12px;
+  margin: 0 0 13px;
   color: #253951;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .gap-group {
@@ -254,7 +283,7 @@
 
 .gap-head span,
 .gap-head b {
-  font-size: 8px;
+  font-size: 9px;
   color: #475f7f;
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -265,20 +294,20 @@
 }
 
 .gap-bar {
-  height: 18px;
+  height: 20px;
   background: #dce5f0;
-  border-radius: 3px;
-  margin-bottom: 5px;
+  border-radius: 4px;
+  margin-bottom: 6px;
   overflow: hidden;
 }
 
 .gap-bar span {
   display: block;
   height: 100%;
-  line-height: 18px;
-  padding-left: 8px;
-  font-size: 7px;
-  font-weight: 800;
+  line-height: 20px;
+  padding-left: 9px;
+  font-size: 8px;
+  font-weight:700;
   color: #fff;
 }
 
@@ -300,21 +329,21 @@
 }
 
 .pm-note h4 {
-  margin: 0 0 10px;
-  font-size: 12px;
+  margin: 0 0 12px;
+  font-size: 14px;
   letter-spacing: 0.08em;
 }
 
 .pm-note p {
   margin: 0 0 10px;
-  font-size: 10px;
+  font-size: 12px;
   color: #576b87;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
 .pm-note strong {
   color: #1d324d;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .pm-note.wins {
@@ -331,4 +360,31 @@
 
 .pm-note.moves h4 {
   color: #1d324d;
+}
+
+.pm-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.pm-title-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+.pm-tick-icon {
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.pm-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
 }

@@ -7,23 +7,43 @@ import "./TrendingCompetitorFeed.css";
 const posts = [
   {
     image: "/assets/trending1.png",
-    badge: "LINKEDIN",
+    badge: (
+  <>
+    <img
+      src="/assets/linked.png"
+      alt="linkedin"
+      className="badge-icon"
+    />
+    LINKEDIN
+  </>
+),
     title: "DataPulse Solutions",
     user: "1 hour ago",
     text: "We're excited to announce our latest breakthrough in neural network...",
     metricA: "8.2%",
     metricB: "42.1K",
+    chip: "+12.4% HIGH GROWTH",
+    chipClass: "green-chip",
   },
-  {
-    image: "/assets/trending2.png",
-    badge: "INSTAGRAM",
-    title: "CreativeSync Agency",
-    user: "5 hours ago",
-    text: "Culture is everything. Today we're celebrating 5 years of remote-first...",
-    metricA: "15.4%",
-    metricB: "1.2k",
-    chip: "VIRAL VELOCITY",
-  },
+{
+  image: "/assets/trending2.png",
+  badge: (
+    <>
+      <img
+        src="/assets/instagram.png"
+        alt="instagram"
+        className="badge-icon"
+      />
+      INSTAGRAM
+    </>
+  ),
+  title: "CreativeSync Agency",
+  user: "5 hours ago",
+  text: "Culture is everything. Today we're celebrating 5 years of remote-first...",
+  metricA: "15.4%",
+  metricB: "1.2k",
+  chip: "VIRAL VELOCITY",
+},
   {
     image: "/assets/trending3.png",
     badge: "X / TWITTER",
@@ -32,24 +52,45 @@ const posts = [
     text: "The shift towards privacy-first marketing isn't a trend, it's a...",
     metricA: "6.1%",
     metricB: "843",
+   
   },
   {
     image: "/assets/trending4.png",
-    badge: "TIKTOK",
+    badge: (
+  <>
+    <img
+      src="/assets/tiktok.png"
+      alt="tiktok"
+      className="badge-icon"
+    />
+    TIKTOK
+  </>
+),
     title: "DataPulse Solutions",
     user: "1 day ago",
     text: "POV: You just integrated Axiom Growth and your morning coffee...",
     metricA: "22.8%",
     metricB: "185K",
+  
   },
   {
     image: "/assets/trending5.png",
-    badge: "LINKEDIN",
+    badge: (
+  <>
+    <img
+      src="/assets/linked.png"
+      alt="linkedin"
+      className="badge-icon"
+    />
+    LINKEDIN
+  </>
+),
     title: "Nexus Insights",
     user: "1 day ago",
     text: "How we scaled our API to handle 10 billion requests per month without a...",
     metricA: "6.7%",
     metricB: "12.5K",
+
   },
 ];
 
@@ -135,6 +176,18 @@ const TrendingCompetitorFeed = () => {
           </div>
 
         </div>
+        <section className="tcf-back-body">
+  <button
+    type="button"
+    className="tcf-back"
+    onClick={() => navigate("/competitor-analysis")}
+  >
+    <span className="tcf-back-arrow" aria-hidden="true">
+      ←
+    </span>
+    Back to Main Competitors
+  </button>
+</section>
 
         <section className="tcf-shell">
           <div className="tcf-header">
@@ -171,7 +224,11 @@ const TrendingCompetitorFeed = () => {
                   <div className="media-wrap">
                     <img src={post.image} alt={post.title} />
                     <span className="badge">{post.badge}</span>
-                    {post.chip ? <span className="chip">{post.chip}</span> : null}
+                    {post.chip ? (
+  <span className={`chip ${post.chipClass || ""}`}>
+    {post.chip}
+  </span>
+) : null}
                   </div>
                   <div className="card-body">
                     <h3 className="post-title">

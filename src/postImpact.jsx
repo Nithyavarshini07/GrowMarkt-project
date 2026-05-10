@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./Dashboard.css";
 import "./postImpact.css";
 
 function NavIcon({ kind }) {
@@ -159,40 +160,51 @@ export default function PostImpact() {
 
   return (
     <div className="pi-page">
-      <aside className="pi-sidebar">
-        <div className="pi-brand">
-          <span className="pi-brand-main">GrowMarkt</span>
-          <span className="pi-brand-sub">THE DATA CURATOR</span>
+      <aside className="sidebar">
+        <div className="brand-header">
+                  <span className="brand-main">GrowMarkt</span>
+          <span className="brand-subtitle">THE DATA CURATOR</span>
+  
         </div>
 
-        <nav className="pi-nav">
-          <ul className="pi-nav-list">
-            <li className="pi-nav-item">
-              <NavIcon kind="dashboard" />
+        <nav>
+          <ul>
+            <li className="active">
+              <img src="/assets/dashboard.png" alt="dashboard" className="nav-icon" />
               DASHBOARD
             </li>
-            <li className="pi-nav-item">
-              <NavIcon kind="campaign" />
-              CAMPAIGN MANAGER
-            </li>
-            <li className="pi-nav-item pi-nav-item--active">
-              <NavIcon kind="analytics" />
-              ANALYTICS
-            </li>
-            <li className="pi-nav-item">
-              <NavIcon kind="competitors" />
-              COMPETITORS
-            </li>
-            <li className="pi-nav-item">
-              <NavIcon kind="settings" />
-              SETTINGS &amp; SUPPORT
-            </li>
+
+<li onClick={() => navigate("/campaign-timeline")}>
+  <img
+    src="/assets/campaign.png"
+    alt="campaign"
+    className="nav-icon"
+  />
+  CAMPAIGN MANAGER
+</li>
+
+<li onClick={() => navigate("/analytics")}>
+  <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
+  ANALYTICS
+</li>
+
+<li onClick={() => navigate("/competitor-analysis")} style={{ cursor: "pointer" }}>
+  <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
+  COMPETITORS
+</li>
+
+<li onClick={() => navigate("/settings")}>
+  <img
+    src="/assets/settings.png"
+    alt="settings"
+    className="nav-icon"
+  />
+  SETTINGS
+</li>
           </ul>
         </nav>
 
-        <button type="button" className="pi-new-campaign">
-          + NEW CAMPAIGN
-        </button>
+        <button className="campaign-btn">+ NEW CAMPAIGN</button>
       </aside>
 
       <main className="pi-main">
@@ -219,7 +231,7 @@ export default function PostImpact() {
           <div className="pi-user-area">
             <div className="pi-user-text">
               <div className="pi-user-name-row">
-                <LeafIcon />
+                 <img src="/assets/bell.png" alt="notification" />
                 <span className="pi-user-name">Alex Mercer</span>
               </div>
               <div className="pi-user-tier">PREMIUM CURATOR</div>

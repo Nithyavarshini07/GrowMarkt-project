@@ -313,8 +313,10 @@ const CompetitorAnalysis = () => {
               </article>
             ))}
           </div>
+          
         </section>
       </main>
+      
     </div>
   );
 };

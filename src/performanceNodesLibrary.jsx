@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Dashboard.css";
 import "./performanceNodesLibrary.css";
 
 const platformTabs = [
@@ -21,7 +22,9 @@ const defaultNodes = [
     reachLabel: "REACH",
     reachValue: "12.5k",
     mediaVariant: "instagram-1",
+    image: "/assets/node2.png",
     showTopPerformer: true,
+    
   },
   {
     id: "node-2",
@@ -32,6 +35,8 @@ const defaultNodes = [
     engagementValue: "3.15%",
     reachLabel: "REACH",
     reachValue: "8.9k",
+      image: "/assets/node1.png",
+    showTopPerformer: true,
     mediaVariant: "linkedin-1",
   },
   {
@@ -44,6 +49,9 @@ const defaultNodes = [
     reachLabel: "REACH",
     reachValue: "45.2k",
     mediaVariant: "tiktok-1",
+       image: "/assets/node4.png",
+    showTopPerformer: true,
+    
   },
   {
     id: "node-4",
@@ -55,6 +63,8 @@ const defaultNodes = [
     reachLabel: "REACH",
     reachValue: "15.1k",
     mediaVariant: "instagram-2",
+       image: "/assets/node4.png",
+    showTopPerformer: true,
   },
   {
     id: "node-5",
@@ -66,6 +76,8 @@ const defaultNodes = [
     reachLabel: "REACH",
     reachValue: "22.0k",
     mediaVariant: "x-1",
+       image: "/assets/node5.png",
+    showTopPerformer: true,
   },
   {
     id: "node-6",
@@ -77,6 +89,8 @@ const defaultNodes = [
     reachLabel: "REACH",
     reachValue: "5.4k",
     mediaVariant: "linkedin-2",
+       image: "/assets/node6.png",
+    showTopPerformer: true,
   },
 ];
 
@@ -264,43 +278,55 @@ export default function PerformanceNodesLibrary({ nodes = defaultNodes }) {
 
   return (
     <div className="pnl-page">
-      <aside className="pnl-sidebar">
-        <div className="pnl-brand">
-          <span className="pnl-brand-main">GrowMarkt</span>
-          <span className="pnl-brand-sub">THE DATA CURATOR</span>
+      <aside className="sidebar">
+        <div className="brand-header">
+                  <span className="brand-main">GrowMarkt</span>
+          <span className="brand-subtitle">THE DATA CURATOR</span>
+  
         </div>
 
-        <nav className="pnl-nav">
-          <ul className="pnl-nav-list">
-            <li className="pnl-nav-item" >
-              <NavIcon kind="dashboard" />
+        <nav>
+          <ul>
+            <li className="active">
+              <img src="/assets/dashboard.png" alt="dashboard" className="nav-icon" />
               DASHBOARD
             </li>
-            <li className="pnl-nav-item">
-              <NavIcon kind="campaign" />
-              CAMPAIGN MANAGER
-            </li>
-            <li className="pnl-nav-item pnl-nav-item--active">
-              <NavIcon kind="analytics" />
-              ANALYTICS
-            </li>
-            <li className="pnl-nav-item">
-              <NavIcon kind="competitors" />
-              COMPETITORS
-            </li>
-            <li className="pnl-nav-item">
-              <NavIcon kind="settings" />
-              SETTINGS
-            </li>
+
+<li onClick={() => navigate("/campaign-timeline")}>
+  <img
+    src="/assets/campaign.png"
+    alt="campaign"
+    className="nav-icon"
+  />
+  CAMPAIGN MANAGER
+</li>
+
+<li onClick={() => navigate("/analytics")}>
+  <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
+  ANALYTICS
+</li>
+
+<li onClick={() => navigate("/competitor-analysis")} style={{ cursor: "pointer" }}>
+  <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
+  COMPETITORS
+</li>
+
+<li onClick={() => navigate("/settings")}>
+  <img
+    src="/assets/settings.png"
+    alt="settings"
+    className="nav-icon"
+  />
+  SETTINGS
+</li>
           </ul>
         </nav>
 
-        <button type="button" className="pnl-new-campaign">
-          + NEW CAMPAIGN
-        </button>
+        <button className="campaign-btn">+ NEW CAMPAIGN</button>
       </aside>
 
       <main className="pnl-main">
+
         <div className="pnl-topbar">
           <div className="pnl-search-wrap">
             <div className="pnl-search">
@@ -350,11 +376,15 @@ export default function PerformanceNodesLibrary({ nodes = defaultNodes }) {
 
             <div className="pnl-avatar" aria-hidden="true" />
           </div>
+          
         </div>
 
         <div className="pnl-header-row">
+                  
           <div className="pnl-header-left">
+            
             <div className="pnl-archive">
+              
               <span className="pnl-archive-dot" />
               ARCHIVE 2024
             </div>
@@ -424,17 +454,11 @@ export default function PerformanceNodesLibrary({ nodes = defaultNodes }) {
                   `pnl-card-media--${n.mediaVariant}`,
                 ].join(" ")}
               >
-                <img
-                  className="pnl-media-img"
-                  src={
-                    n.mediaVariant.includes("linkedin")
-                      ? "/assets/node2.png"
-                      : n.mediaVariant.includes("tiktok")
-                        ? "/assets/historical-growth.png"
-                        : "/assets/black.png"
-                  }
-                  alt=""
-                />
+<img
+  className="pnl-media-img"
+  src={n.image}
+  alt={n.title}
+/>
 
                 <span
                   className={[

@@ -81,33 +81,39 @@ const Settings = () => {
 
         <div className="page-content">
         <div className="settings-main">
-        <div className="settings-header">
-          <div className="settings-header-left">
-            <div className="settings-kicker">STRATEGIC WORKSPACE</div>
-            <div className="settings-title">Campaign Timeline</div>
-            <div className="settings-subtitle">
-              Strategic content distribution and multi-channel orchestration
-            </div>
-          </div>
+       <div className="campaign-header">
+  
+  <div className="campaign-header-left">
+    <div className="settings-kicker">STRATEGIC WORKSPACE</div>
+    <div className="settings-title">Campaign Timeline</div>
+    <div className="settings-subtitle">
+      Strategic content distribution and multi-channel orchestration
+    </div>
+  </div>
 
-          <div className="settings-header-right">
-            <div className="settings-seg">
-              <button className="settings-seg-btn settings-seg-active">DAYS</button>
-              <button
-  className="settings-seg-btn"
-  onClick={() => navigate("/monthly-objective")}
->
-  MONTHLY
+  <div className="campaign-header-right">
+    
+    <div className="segment-control">
+      <button className="segment-btn segment-btn-active">DAYS</button>
+      <button className="segment-btn" onClick={() => navigate("/monthly-objective")}>
+        MONTHLY
+      </button>
+<button className="segment-btn segment-channels">
+  <img src="/assets/channel.png" alt="channel" className="btn-icon" />
+  CHANNELS
 </button>
-              <button className="settings-seg-btn">CHANNELS</button>
-            </div>
-            <button
-  className="settings-create"
+    </div>
+
+<button
+  className="primary-action-btn"
   onClick={() => navigate("/create-unified-post")}
 >
+  <img src="/assets/plus.png" alt="plus" className="btn-icon" />
   CREATE CAMPAIGN
 </button>
-          </div>
+
+  </div>
+
         </div>
 
         <section className="settings-timeline">
@@ -121,6 +127,11 @@ const Settings = () => {
               <div className="settings-event-title">Spring Collection Launch Video</div>
               <div className="settings-event-meta">
                 <span className="settings-dot settings-dot-green" />
+                                    <img
+  src="/assets/instagram.png"
+  alt="Instagram"
+  className="settings-dot settings-dot-blue"
+/>
                 <span>INSTAGRAM</span>
               </div>
             </div>
@@ -128,6 +139,7 @@ const Settings = () => {
               <div className="settings-event-title">Influencer Briefing</div>
               <div className="settings-event-meta settings-event-meta-muted">
                 <span className="settings-dot settings-dot-gray" />
+
                 <span>INTERNAL</span>
               </div>
             </div>
@@ -143,6 +155,11 @@ const Settings = () => {
               <div className="settings-event-title">Weekly Metric Carousel Review</div>
               <div className="settings-event-meta">
                 <span className="settings-dot settings-dot-blue" />
+                <img
+  src="/assets/linkedin3.png"
+  alt="LinkedIn"
+  className="settings-dot settings-dot-gray"
+/>
                 <span>LINKEDIN</span>
               </div>
             </div>
@@ -157,11 +174,25 @@ const Settings = () => {
               <div className="settings-pill settings-pill-plan">PLANNED</div>
               <div className="settings-event-title">Growth Catalyst Keynote Stream</div>
               <div className="settings-collab">
-                <div className="settings-faces">
-                  <span className="settings-face settings-face-1" />
-                  <span className="settings-face settings-face-2" />
-                  <span className="settings-face settings-face-3" />
-                </div>
+<div className="settings-faces">
+  <img
+    src="/assets/user1.jpg"
+    alt="User 1"
+    className="settings-face settings-face-1"
+  />
+
+  <img
+    src="/assets/girl.jpg"
+    alt="Girl"
+    className="settings-face settings-face-2"
+  />
+
+  <img
+    src="/assets/alex.jpg"
+    alt="Alex"
+    className="settings-face settings-face-3"
+  />
+</div>
                 <div className="settings-collab-txt">Collaborators</div>
               </div>
             </div>
@@ -188,6 +219,11 @@ const Settings = () => {
               <div className="settings-event-title">Weekend Roundup Blast</div>
               <div className="settings-event-meta">
                 <span className="settings-dot settings-dot-amber" />
+                 <img
+      src="/assets/contact.png"
+      alt="Contact"
+      className="settings-dot settings-dot-amber"
+    />
                 <span>EMAIL</span>
               </div>
             </div>
@@ -276,9 +312,23 @@ const Settings = () => {
               <span className="settings-live">LIVE</span>
             </div>
             <div className="settings-avatars">
-              <span className="settings-av settings-av-1" />
-              <span className="settings-av settings-av-2" />
-              <span className="settings-av settings-av-3" />
+<img
+  src="/assets/user1.jpg"
+  alt="User 1"
+  className="settings-av settings-av-1"
+/>
+
+<img
+  src="/assets/girl.jpg"
+  alt="Girl"
+  className="settings-av settings-av-2"
+/>
+
+<img
+  src="/assets/alex.jpg"
+  alt="Alex"
+  className="settings-av settings-av-3"
+/>
               <span className="settings-av settings-av-more">+120</span>
             </div>
           </div>
@@ -446,7 +496,11 @@ const Settings = () => {
                   </div>
                   <div className="settings-feed-tag settings-tag-scheduled">SCHEDULED</div>
                 </div>
-                <div className="settings-feed-thumb" aria-hidden="true" />
+                <img
+  src="/assets/schedule.png"
+  alt="Schedule"
+  className="settings-feed-thumb"
+/>
                 <div className="settings-feed-foot settings-feed-foot-green">Tomorrow, 10:00 AM</div>
               </div>
             </div>

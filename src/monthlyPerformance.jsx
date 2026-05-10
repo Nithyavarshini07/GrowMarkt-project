@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./Dashboard.css";
 import "./monthlyPerformance.css";
 
 function NavIcon({ kind }) {
@@ -159,46 +160,51 @@ export default function MonthlyPerformance() {
 
   return (
     <div className="mp-page">
-      <aside className="mp-sidebar">
-        <div className="mp-brand">
-          <span className="mp-brand-main">GrowMarkt</span>
-          <span className="mp-brand-sub">THE DATA CURATOR</span>
+      <aside className="sidebar">
+        <div className="brand-header">
+                  <span className="brand-main">GrowMarkt</span>
+          <span className="brand-subtitle">THE DATA CURATOR</span>
+  
         </div>
 
-        <nav className="mp-nav">
-          <ul className="mp-nav-list">
-<li
-  className="mp-nav-item"
-  onClick={() => navigate("/dashboard")}
-  role="button"
-  tabIndex={0}
-  style={{ cursor: "pointer" }}
->
-  <NavIcon kind="dashboard" />
-  <span>DASHBOARD</span>
+        <nav>
+          <ul>
+            <li className="active">
+              <img src="/assets/dashboard.png" alt="dashboard" className="nav-icon" />
+              DASHBOARD
+            </li>
+
+<li onClick={() => navigate("/campaign-timeline")}>
+  <img
+    src="/assets/campaign.png"
+    alt="campaign"
+    className="nav-icon"
+  />
+  CAMPAIGN MANAGER
 </li>
-            <li className="mp-nav-item">
-              <NavIcon kind="campaign" />
-              CAMPAIGN MANAGER
-            </li>
-            <li className="mp-nav-item mp-nav-item--active">
-              <NavIcon kind="analytics" />
-              ANALYTICS
-            </li>
-            <li className="mp-nav-item">
-              <NavIcon kind="competitors" />
-              COMPETITORS
-            </li>
-            <li className="mp-nav-item">
-              <NavIcon kind="settings" />
-              SETTINGS &amp; SUPPORT
-            </li>
+
+<li onClick={() => navigate("/analytics")}>
+  <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
+  ANALYTICS
+</li>
+
+<li onClick={() => navigate("/competitor-analysis")} style={{ cursor: "pointer" }}>
+  <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
+  COMPETITORS
+</li>
+
+<li onClick={() => navigate("/settings")}>
+  <img
+    src="/assets/settings.png"
+    alt="settings"
+    className="nav-icon"
+  />
+  SETTINGS
+</li>
           </ul>
         </nav>
 
-        <button type="button" className="mp-new-campaign">
-          + NEW CAMPAIGN
-        </button>
+        <button className="campaign-btn">+ NEW CAMPAIGN</button>
       </aside>
 
       <main className="mp-main">

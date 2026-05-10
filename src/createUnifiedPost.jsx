@@ -1,7 +1,9 @@
 import React, { useMemo, useState } from "react";
 import "./createUnifiedPost.css";
+import { useNavigate } from "react-router-dom";
 
 export default function CreateUnifiedPost() {
+  const navigate = useNavigate();
   const [selectedChannel, setSelectedChannel] = useState("share");
   const [scheduleEnabled, setScheduleEnabled] = useState(true);
 
@@ -191,16 +193,20 @@ export default function CreateUnifiedPost() {
             <div className="cup-title">Create Unified Post</div>
             <div className="cup-subtitle">CAMPAIGN: Q4 GROWTH STRATEGY</div>
           </div>
-          <button className="cup-close" aria-label="Close">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path
-                d="M6 6l12 12M18 6 6 18"
-                stroke="#0F172A"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            </svg>
-          </button>
+<button
+  className="cup-close"
+  aria-label="Close"
+  onClick={() => navigate("/campaign-timeline")}
+>
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path
+      d="M6 6l12 12M18 6 6 18"
+      stroke="#0F172A"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+  </svg>
+</button>
         </div>
 
         <div className="cup-divider" />
@@ -364,7 +370,11 @@ export default function CreateUnifiedPost() {
 
             <div className="cup-preview">
               <div className="cup-prev-head">
-                <div className="cup-prev-avatar" aria-hidden="true" />
+               <img
+  src="/assets/girl.jpg"
+  alt="Avatar"
+  className="cup-prev-avatar"
+/>
                 <div className="cup-prev-meta">
                   <div className="cup-prev-name">GrowMarkt Agency</div>
                   <div className="cup-prev-sub">12,402 followers • promoted</div>
@@ -376,7 +386,11 @@ export default function CreateUnifiedPost() {
                 indicate a 42% lift in organic engagement...
               </div>
 
-              <div className="cup-prev-media" aria-hidden="true" />
+              <img
+  src="/assets/coffee.png"
+  alt="Media Preview"
+  className="cup-prev-media"
+/>
 
               <div className="cup-prev-actions" aria-hidden="true">
                 <div className="cup-prev-act">
@@ -424,15 +438,24 @@ export default function CreateUnifiedPost() {
 
             <div className="cup-preview cup-preview-mini">
               <div className="cup-mini-row">
-                <div className="cup-mini-avatar" aria-hidden="true" />
+                <img
+  src="/assets/girl.jpg"
+  alt="Mini Avatar"
+  className="cup-mini-avatar"
+/>
                 <div className="cup-mini-name">growmarkt_hq</div>
                 <div className="cup-mini-dots" aria-hidden="true">
+                  
                   <span />
                   <span />
                   <span />
                 </div>
               </div>
-              <div className="cup-mini-media" aria-hidden="true" />
+              <img
+  src="/assets/coffee.png"
+  alt="Mini Media"
+  className="cup-mini-media"
+/>
             </div>
           </div>
         </div>

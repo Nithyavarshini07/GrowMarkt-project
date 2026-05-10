@@ -64,7 +64,20 @@ const VortexMedia = () => {
             </div>
             <img src="/assets/alex.jpg" alt="avatar" className="avatar" />
           </div>
+          
         </header>
+        <section className="vm-body">
+  <button
+    type="button"
+    className="vm-back"
+    onClick={() => navigate("/competitor-analysis")}
+  >
+    <span className="vm-back-arrow" aria-hidden="true">
+      ←
+    </span>
+    Back to Main Competitors
+  </button>
+</section>
 
         <section className="vortex-main-shell">
           <section className="vortex-header-card">

@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
+import "./settings.css";
 import "./billing.css";
 
 function IconDashboard(props) {
@@ -167,60 +168,56 @@ export default function Billing() {
   const navigate = useNavigate();
 
   return (
-    <div className="dashboard-layout">
+    <div className="settings-page">
       <aside className="sidebar">
         <div className="brand-header">
-                  <span className="brand-main">GrowMarkt</span>
+          <span className="brand-main">GrowMarkt</span>
           <span className="brand-subtitle">THE DATA CURATOR</span>
-  
         </div>
 
         <nav>
           <ul>
-            <li onClick={() => navigate("/dashboard")} style={{ cursor: "pointer" }}>
+            <li onClick={() => navigate("/dashboard")}>
               <img src="/assets/dashboard.png" alt="dashboard" className="nav-icon" />
               DASHBOARD
             </li>
 
-<li onClick={() => navigate("/campaign-timeline")} style={{ cursor: "pointer" }}>
-  <img src="/assets/campaign.png" alt="campaign" className="nav-icon" />
-  CAMPAIGN MANAGER
-</li>
+            <li onClick={() => navigate("/campaign-timeline")}>
+              <img src="/assets/campaign.png" alt="campaign" className="nav-icon" />
+              CAMPAIGN MANAGER
+            </li>
 
-<li onClick={() => navigate("/analytics")} style={{ cursor: "pointer" }}>
-  <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
-  ANALYTICS
-</li>
+            <li onClick={() => navigate("/analytics")}>
+              <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
+              ANALYTICS
+            </li>
 
-<li onClick={() => navigate("/competitor-analysis")} style={{ cursor: "pointer" }}>
-  <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
-  COMPETITORS
-</li>
+            <li onClick={() => navigate("/competitor-analysis")} style={{ cursor: "pointer" }}>
+              <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
+              COMPETITORS
+            </li>
 
-<li className="active">
-  <img src="/assets/settings.png" alt="settings" className="nav-icon" />
-  SETTINGS
-</li>
+            <li className="active">
+              <img src="/assets/settings.png" alt="settings" className="nav-icon" />
+              SETTINGS
+            </li>
           </ul>
         </nav>
 
         <button className="campaign-btn">+ NEW CAMPAIGN</button>
       </aside>
 
-      <main className="main">
-        <div className="topbar">
-
-          <div className="search-container">
-            <span className="search-icon">
-              <img src="/assets/search.png" alt="search" />
+      <main className="settings-main">
+        <header className="settings-topbar">
+          <div className="settings-search">
+            <span className="settings-search-icon" aria-hidden="true">
+              <IconSearch />
             </span>
-            <input placeholder="Search insights..." />
+            <input placeholder="Search data..." />
           </div>
 
           <div className="user-profile">
-
             <div className="user-profile-left">
-
               <div className="notif-icon">
                 <img src="/assets/bell.png" alt="notification" />
                 <span className="dot"></span>
@@ -230,24 +227,18 @@ export default function Billing() {
                 <p className="user-name">Alex Mercer</p>
                 <p className="user-role">PREMIUM CURATOR</p>
               </div>
-
             </div>
 
             <img src="/assets/alex.jpg" alt="avatar" className="avatar" />
-
           </div>
+        </header>
 
-        </div>
-
-        <div className="page-content">
-        <div className="billing-main">
-
-        <section className="billing-header">
+        <section className="settings-header">
           <h1>Billing &amp; Payment</h1>
           <p>Manage your subscription, payment methods, and billing history.</p>
         </section>
 
-        <section className="billing-tabs" role="tablist" aria-label="Billing sections">
+        <section className="settings-tabs" role="tablist" aria-label="Settings sections">
           <button type="button" onClick={() => navigate("/settings")}>
             ACCOUNT &amp; TEAM
           </button>
@@ -255,9 +246,11 @@ export default function Billing() {
             BILLING &amp; PAYMENT
           </button>
           <button type="button" onClick={() => navigate("/help")}>
-  SUPPORT &amp; HELP
-</button>
-          <button type="button">NOTIFICATIONS</button>
+            SUPPORT &amp; HELP
+          </button>
+          <button type="button" onClick={() => navigate("/notifications")}>
+            NOTIFICATIONS
+          </button>
         </section>
 
         <section className="billing-body">
@@ -383,43 +376,37 @@ export default function Billing() {
               <div className="billing-credit-top">
                 <div className="billing-credit-title">PRIMARY CARD</div>
                 <div className="billing-credit-ic" aria-hidden="true">
-                  <IconContactless />
+                  <img src="/assets/card.png" alt="Contactless Card" className="billing-credit-ic" />
                 </div>
               </div>
 
-              <div className="billing-credit-dots" aria-hidden="true">
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
+              <div className="billing-credit-numberline" aria-label="Card number ending in 4242">
+                <div className="billing-credit-masked" aria-hidden="true">
+                  <span>****</span>
+                  <span>****</span>
+                  <span>****</span>
+                </div>
+                <div className="billing-credit-last4">4242</div>
               </div>
-
-              <div className="billing-credit-number">4242</div>
 
               <div className="billing-credit-meta">
-                <div className="billing-credit-name">ALEXANDER CROW</div>
-                <div className="billing-credit-exp">
-                  <span>PREMIUM</span>
-                  <span>12/25</span>
+                <div className="billing-credit-field">
+                  <div className="billing-credit-label">CARDHOLDER NAME</div>
+                  <div className="billing-credit-value">ALEXANDER CROW</div>
+                </div>
+                <div className="billing-credit-field billing-credit-field-right">
+                  <div className="billing-credit-label">EXPIRY DATE</div>
+                  <div className="billing-credit-value">12/25</div>
                 </div>
               </div>
 
-              <button type="button" className="billing-credit-btn">
-                ADD NEW PAYMENT METHOD
-              </button>
+<button type="button" className="billing-credit-btn">
+  <img src="/assets/add.png" alt="Add" />
+  ADD NEW PAYMENT METHOD
+</button>
             </div>
           </aside>
         </section>
-        </div>
-        </div>
       </main>
     </div>
   );
