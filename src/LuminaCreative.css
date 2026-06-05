@@ -1,7 +1,28 @@
 .lumina-page {
   background: #f3f5fa;
 }
-
+.search-icon{
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  
+}
+.search-icon img {
+  width: 18px;
+  height: 18px;
+  opacity: 0.6;
+}
+.search-icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  color: #94a3b8;
+}
 .lumina-main {
   padding: 8px 20px 16px;
   gap: 0;

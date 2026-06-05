@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import "./campaignTimeline.css";
 
+
 function IconSearch(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
@@ -389,7 +390,15 @@ const Settings = () => {
               <div className="settings-section-title">Monthly Campaign Goals</div>
               <div className="settings-section-sub">Strategic objectives for October 2024</div>
             </div>
-            <button className="settings-goals-btn">SET NEW OBJECTIVE</button>
+            <button 
+  className="settings-goals-btn"
+  onClick={() => {
+    window.scrollTo(0, 0);
+    navigate("/monthly-objective");
+  }}
+>
+  SET NEW OBJECTIVE
+</button>
           </div>
 
           <div className="settings-goal-grid">

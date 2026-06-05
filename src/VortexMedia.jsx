@@ -3,6 +3,24 @@ import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import "./VortexMedia.css";
 
+
+function IconSearch(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M10.8 18.2a7.4 7.4 0 1 0 0-14.8 7.4 7.4 0 0 0 0 14.8Z"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path
+        d="M20.4 20.4l-3.9-3.9"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
 const VortexMedia = () => {
   const navigate = useNavigate();
 
@@ -54,7 +72,7 @@ const VortexMedia = () => {
           <div className="user-profile">
             <div className="user-profile-left">
               <div className="notif-icon">
-                <img src="/assets/bell.png" alt="notification" />
+<IconSearch />
                 <span className="dot" />
               </div>
               <div className="profile-info">
@@ -92,7 +110,13 @@ const VortexMedia = () => {
               </div>
             </div>
             <div className="vortex-header-actions">
-              <button type="button" className="light-btn">COMPARE TO SELF</button>
+              <button 
+  type="button" 
+  className="light-btn"
+  onClick={() => navigate("/performance-metric")}
+>
+  COMPARE TO SELF
+</button>
               <button type="button" className="dark-btn">GENERATE PDF REPORT</button>
             </div>
           </section>
@@ -193,9 +217,15 @@ const VortexMedia = () => {
                   <span>⤴ 1.2K</span>
                   <span className="meta-up">+22% VS AVG</span>
                 </div>
-                <button type="button" onClick={() => navigate("/lumina-creative")}>
-                  ANALYZE POST
-                </button>
+<button 
+  type="button" 
+  onClick={() => {
+    window.scrollTo(0, 0);
+    navigate("/lumina-creative");
+  }}
+>
+  ANALYZE POST
+</button>
               </article>
 
               <article className="vortex-feed-card">
@@ -208,9 +238,15 @@ const VortexMedia = () => {
                   <span>⤴ 452</span>
                   <span>-5% VS AVG</span>
                 </div>
-                <button type="button" onClick={() => navigate("/lumina-creative")}>
-                  ANALYZE POST
-                </button>
+<button 
+  type="button" 
+  onClick={() => {
+    window.scrollTo(0, 0);
+    navigate("/lumina-creative");
+  }}
+>
+  ANALYZE POST
+</button>
               </article>
 
               <article className="vortex-feed-card">
@@ -224,9 +260,15 @@ const VortexMedia = () => {
                   <span>⤴ 3.1K</span>
                   <span className="meta-up">+45% VS AVG</span>
                 </div>
-                <button type="button" onClick={() => navigate("/lumina-creative")}>
-                  ANALYZE POST
-                </button>
+<button 
+  type="button" 
+  onClick={() => {
+    window.scrollTo(0, 0);
+    navigate("/lumina-creative");
+  }}
+>
+  ANALYZE POST
+</button>
               </article>
 
               <article className="vortex-feed-card">
@@ -239,9 +281,15 @@ const VortexMedia = () => {
                   <span>⤴ 890</span>
                   <span>+12% VS AVG</span>
                 </div>
-                <button type="button" onClick={() => navigate("/lumina-creative")}>
-                  ANALYZE POST
-                </button>
+<button 
+  type="button" 
+  onClick={() => {
+    window.scrollTo(0, 0);
+    navigate("/lumina-creative");
+  }}
+>
+  ANALYZE POST
+</button>
               </article>
             </div>
           </section>

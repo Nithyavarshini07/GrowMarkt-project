@@ -107,6 +107,11 @@ body {
   font-weight: 600;
 }
 
+.campaign-btn:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
+}
+
 /* LOGO SECTION */
 /* Sidebar basics */
 

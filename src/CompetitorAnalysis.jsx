@@ -311,7 +311,15 @@ const CompetitorAnalysis = () => {
         <section className="panel feed-panel">
           <div className="feed-head">
             <h4>Trending Competitor Posts Feed</h4>
-            <button type="button" onClick={() => navigate("/trending-feed")}>EXPLORE ALL ↗</button>
+            <button 
+  type="button" 
+  onClick={() => {
+    window.scrollTo(0, 0);
+    navigate("/trending-feed");
+  }}
+>
+  EXPLORE ALL ↗
+</button>
           </div>
 
           <div className="feed-list">

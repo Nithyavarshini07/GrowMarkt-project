@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import ScrollToTop from './ScrollToTop';
 import LoginPage from "./LoginPage";
 import ResetPassword from "./ResetPassword";
 import ResetLink from "./ResetLink";

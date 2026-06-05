@@ -3,6 +3,24 @@ import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import "./LuminaCreative.css";
 
+
+function IconSearch(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M10.8 18.2a7.4 7.4 0 1 0 0-14.8 7.4 7.4 0 0 0 0 14.8Z"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path
+        d="M20.4 20.4l-3.9-3.9"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
 const LuminaCreative = () => {
   const navigate = useNavigate();
 
@@ -54,7 +72,9 @@ const LuminaCreative = () => {
           <div className="user-profile">
             <div className="user-profile-left">
               <div className="notif-icon">
-                <img src="/assets/bell.png" alt="notification" />
+                           <span className="search-icon">
+              <IconSearch />
+            </span>
                 <span className="dot" />
               </div>
               <div className="profile-info">
@@ -65,6 +85,19 @@ const LuminaCreative = () => {
             <img src="/assets/alex.jpg" alt="avatar" className="avatar" />
           </div>
         </header>
+<button
+  type="button"
+  className="vm-back"
+  onClick={() => {
+    window.scrollTo(0, 0);
+    navigate("/vortex-media");  // Make sure this matches exactly
+  }}
+>
+  <span className="vm-back-arrow" aria-hidden="true">
+    ←
+  </span>
+  Back to Main Vortex
+</button>
 
         <section className="lumina-content-grid">
           <div className="lumina-left-column">

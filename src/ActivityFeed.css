@@ -18,7 +18,7 @@
   box-sizing: border-box;
 }
 
-.activity-sidebar {
+.sidebar {
   width: 260px;
   min-width: 260px;
   flex: 0 0 260px;
@@ -33,37 +33,37 @@
   top: 0;
 }
 
-.activity-brand-header {
-  display: table !important;
-  width: 100%;
-  margin-bottom: 40px !important;
-  border: none !important;
+.brand-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
 }
 
-.activity-brand-main {
-  display: block;
+.brand-main {
   font-family: 'Inter', sans-serif;
   font-size: 26px;
   font-weight: 800;
-  color: #0f172a;
+  color: #0F172A;
+  display: block;
 }
 
-.activity-brand-subtitle {
-  display: block;
+.brand-subtitle {
   font-family: 'Inter', sans-serif;
   font-size: 12px;
   font-weight: 700;
-  color: #94a3b8;
+  color: #94A3B8;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-top: 4px;
+  display: block;
 }
 
-.activity-nav {
+
+.nav-menu {
   margin-top: 12px;
 }
 
-.activity-nav ul {
+.nav-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -72,56 +72,71 @@
   gap: 6px;
 }
 
-.activity-nav ul li {
+/* BASE STYLES FOR NAV ITEMS - ADD THIS */
+.nav-menu li {
+   padding: 10px 12px;
+  color: #94a3b8;
+  font-size: 11px; /* Reduced font size */
+  font-weight: 800;
+  letter-spacing: 0.05em;
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px;
   border-radius: 8px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 12px;
-  color: #64748b;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  letter-spacing: 0.05em;
+  transition: all 0.2s;
 }
 
-.activity-nav ul li:hover {
+/* Hover effect */
+.nav-menu li:hover {
   background: #f1f5f9;
 }
 
-.activity-nav ul li.active {
+/* Active state - GREEN */
+.sidebar li.active {
   background: #ecfdf5;
   color: #10b981;
   border-right: 4px solid #10b981;
+  
 }
 
-.activity-nav-icon {
+/* Icon styling */
+.nav-icon {
   width: 18px;
   height: 18px;
   object-fit: contain;
   opacity: 0.7;
 }
 
-.activity-nav ul li.active .activity-nav-icon {
-  opacity: 1;
-  filter: hue-rotate(90deg);
+/* Active icon - GREEN */
+.nav-menu li.active .nav-icon {
+  opacity: 1 !important;
+  filter: brightness(0) saturate(100%) invert(55%) sepia(72%) saturate(497%) hue-rotate(95deg) brightness(92%) contrast(89%) !important;
 }
 
-.activity-campaign-btn {
+
+.campaign-btn {
   margin-top: auto;
   background: #0f172a;
-  color: #ffffff;
+  color: white;
   border: none;
   padding: 14px;
   border-radius: 12px;
   font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+.campaign-btn:hover {
+  background: #1e293b;
+  transform: translateY(-1px);
 }
 
-.activity-sidebar + .activity-main {
+.sidebar + .main,
+.sidebar + main,
+.sidebar + div:not(.sidebar) {
   margin-left: 260px;
   width: calc(100% - 260px);
   min-height: 100vh;
@@ -683,4 +698,31 @@ margin-top: 10px;
   border-radius: 50%;
   object-fit: cover;
 }
+.vm-body {
+  padding: 4px 22px 10px;
+}
 
+.vm-back {
+  border: 0;
+  background: transparent;
+  color: #7a8ca8;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  cursor: pointer;
+  transition: 0.2s ease;
+  margin-bottom: 16px; /* ADD THIS - Adjust value as needed */
+}
+
+.vm-back:hover {
+  color: #102a43;
+}
+
+.vm-back-arrow {
+  font-size: 16px;
+  line-height: 16px;
+  margin-top: -1px;
+}
