@@ -78,10 +78,13 @@ export default function AddNewCompetitor() {
                 Expand your market intelligence by tracking new voices in your industry.
               </div>
             </div>
-
-            <button className="addcomp-close" aria-label="Close" onClick={() => navigate("/competitors")}>
-              ×
-            </button>
+<button
+  className="addcomp-close"
+  aria-label="Close"
+  onClick={() => navigate("/competitor-analysis")}
+>
+  ×
+</button>
           </header>
 
           <div className="addcomp-modal-body">

@@ -17,8 +17,15 @@
 .competitor-topbar {
   margin-bottom: 20px;
 }
-
+.competitor-page .competitor-heading-row,
+.competitor-page .leaderboard-panel,
+.competitor-page .mid-grid,
+.competitor-page .feed-panel {
+  margin-left: 0 !important;
+  padding-left: 6px !important;
+}
 .competitor-heading-row {
+  
   margin-top: 6px;
   display: flex;
   justify-content: space-between;

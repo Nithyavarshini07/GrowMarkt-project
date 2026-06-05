@@ -2,6 +2,24 @@ import React, { useState } from "react";
 import "./ActivityFeed.css";
 import { useNavigate } from "react-router-dom";
 
+
+function IconSearch(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M10.8 18.2a7.4 7.4 0 1 0 0-14.8 7.4 7.4 0 0 0 0 14.8Z"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path
+        d="M20.4 20.4l-3.9-3.9"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
 const ActivityFeed = () => {
   const navigate = useNavigate();
 const [selectedDate, setSelectedDate] = useState(new Date());
@@ -67,7 +85,8 @@ const formatDate = (date) =>
 
           <div className="af-search-container">
             <span className="af-search-icon">
-              <img src="/assets/search.png" alt="search" />
+              
+<IconSearch />
             </span>
             <input className="af-search" placeholder="Search insights..." />
           </div>

@@ -392,6 +392,7 @@ export default function Notification() {
           </div>
         </header>
 
+        <div className="page-content">
         <section className="settings-header">
           <h1>Notifications</h1>
           <p>Manage your global notification preferences and delivery channels.</p>
@@ -601,6 +602,7 @@ export default function Notification() {
             SAVE PREFERENCES
           </button>
         </footer>
+        </div>
       </main>
     </div>
   );

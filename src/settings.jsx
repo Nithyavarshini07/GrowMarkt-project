@@ -196,7 +196,7 @@ export default function Settings() {
   );
 
   return (
-    <div className="settings-page">
+    <div className="settings-page dashboard-layout">
       <aside className="sidebar">
         <div className="brand-header">
           <span className="brand-main">GrowMarkt</span>
@@ -264,12 +264,11 @@ export default function Settings() {
 
 </div>
 
+        <div className="page-content">
         <section className="settings-header">
           <h1>Account &amp; Team</h1>
-         <p>
-  Manage your editorial profile, connect channels, and access our intelligence support
-  
-  team.
+        <p>
+  Manage your editorial profile, connect channels, and access our intelligence support team.
 </p>
         </section>
 
@@ -478,6 +477,7 @@ export default function Settings() {
   </aside>
 
 </div>
+        </div>
       </main>
     </div>
   );

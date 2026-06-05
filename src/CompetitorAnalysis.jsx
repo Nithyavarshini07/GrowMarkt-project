@@ -2,6 +2,23 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import "./CompetitorAnalysis.css";
+function IconSearch(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M10.8 18.2a7.4 7.4 0 1 0 0-14.8 7.4 7.4 0 0 0 0 14.8Z"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path
+        d="M20.4 20.4l-3.9-3.9"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
 
 const leaderboardRows = [
   {
@@ -71,6 +88,7 @@ const heatmap = [
   [2, 5, 1, 3, 2, 4, 1],
 ];
 
+
 const CompetitorAnalysis = () => {
   const navigate = useNavigate();
 
@@ -127,7 +145,7 @@ const CompetitorAnalysis = () => {
         <header className="topbar competitor-topbar">
           <div className="search-container">
             <span className="search-icon">
-              <img src="/assets/search.png" alt="search" />
+              <IconSearch />
             </span>
             <input placeholder="Search competitors or metrics..." readOnly />
           </div>
@@ -146,15 +164,19 @@ const CompetitorAnalysis = () => {
             <img src="/assets/alex.jpg" alt="avatar" className="avatar" />
           </div>
         </header>
-
+<div className="competitor-page">
         <section className="competitor-heading-row">
           <div>
             <p className="eyebrow">MARKET INTELLIGENCE</p>
             <h2>Competitor Analysis</h2>
           </div>
-          <button type="button" className="add-competitor-btn">
-            <span>⊹</span> ADD COMPETITOR
-          </button>
+          <button
+  type="button"
+  className="add-competitor-btn"
+  onClick={() => navigate("/add-new-competitor")}
+>
+  <span>⊹</span> ADD COMPETITOR
+</button>
         </section>
 
         <section className="panel leaderboard-panel">
@@ -315,6 +337,7 @@ const CompetitorAnalysis = () => {
           </div>
           
         </section>
+        </div>
       </main>
       
     </div>
