@@ -38,47 +38,57 @@ const formatDate = (date) =>
 
 
   return (
-    <div className="af-container">
+    <div className="activity-page">
 
-      {/* SIDEBAR */}
-      <aside className="af-sidebar">
-        <div className="af-brand">
-          <span className="af-brand-title">GrowMarkt</span>
-          <span className="af-brand-sub">THE DATA CURATOR</span>
+      {/* SIDEBAR — matches Dashboard structure */}
+      <aside className="activity-sidebar">
+        <div className="activity-brand-header">
+          <span className="activity-brand-main">GrowMarkt</span>
+          <span className="activity-brand-subtitle">THE DATA CURATOR</span>
         </div>
 
-<ul className="af-nav">
-  <li className="active" onClick={() => navigate("/dashboard")}>
-    <img src="/assets/dashboard.png" alt="dashboard" className="nav-icon" />
-    DASHBOARD
-  </li>
+        <nav className="activity-nav">
+          <ul>
+            <li className="active" onClick={() => navigate("/dashboard")}>
+              <img src="/assets/dashboard.png" alt="dashboard" className="activity-nav-icon" />
+              DASHBOARD
+            </li>
 
-          <li>
-            <img src="/assets/campaign.png" alt="campaign" className="nav-icon" />
-            CAMPAIGN MANAGER
-          </li>
+            <li onClick={() => navigate("/campaign-timeline")}>
+              <img
+                src="/assets/campaign.png"
+                alt="campaign"
+                className="activity-nav-icon"
+              />
+              CAMPAIGN MANAGER
+            </li>
 
-          <li onClick={() => navigate("/analytics")}>
-            <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
-            ANALYTICS
-          </li>
+            <li onClick={() => navigate("/analytics")}>
+              <img src="/assets/analytics.png" alt="analytics" className="activity-nav-icon" />
+              ANALYTICS
+            </li>
 
-          <li>
-            <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
-            COMPETITORS
-          </li>
+            <li onClick={() => navigate("/competitor-analysis")} style={{ cursor: "pointer" }}>
+              <img src="/assets/competition.png" alt="competitors" className="activity-nav-icon" />
+              COMPETITORS
+            </li>
 
-          <li>
-            <img src="/assets/settings.png" alt="settings" className="nav-icon" />
-            SETTINGS
-          </li>
-        </ul>
+            <li onClick={() => navigate("/settings")}>
+              <img
+                src="/assets/settings.png"
+                alt="settings"
+                className="activity-nav-icon"
+              />
+              SETTINGS
+            </li>
+          </ul>
+        </nav>
 
-        <button className="af-btn">+ NEW CAMPAIGN</button>
+        <button className="activity-campaign-btn">+ NEW CAMPAIGN</button>
       </aside>
 
       {/* MAIN */}
-      <div className="af-main">
+      <main className="activity-main">
 
         {/* TOP BAR */}
         <div className="af-top">
@@ -289,7 +299,7 @@ const formatDate = (date) =>
           <div className="af-load">LOAD OLDER ACTIVITY</div>
 
         </div>
-      </div>
+      </main>
     </div>
   );
 };
