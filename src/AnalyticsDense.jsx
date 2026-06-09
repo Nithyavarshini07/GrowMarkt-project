@@ -7,43 +7,43 @@ const AnalyticsDense = () => {
 
   return (
     <div className="ad-page">
-      <aside className="ad-sidebar">
-        <div className="ad-logo-wrap">
-          <h1 className="ad-logo">GrowMarkt</h1>
-          <p className="ad-tagline">THE DATA CURATOR</p>
-        </div>
+<aside className="sidebar">
+  <div className="brand-header">
+    <span className="brand-main">GrowMarkt</span>
+    <span className="brand-subtitle">THE DATA CURATOR</span>
+  </div>
 
-        <nav className="ad-nav">
-          <button type="button" className="ad-nav-link">
-            <img src="/assets/dashboard.png" alt="" />
-            <span>DASHBOARD</span>
-          </button>
+  <nav>
+    <ul>
+      <li onClick={() => navigate("/dashboard")}>
+        <img src="/assets/dashboard.png" alt="dashboard" className="nav-icon" />
+        DASHBOARD
+      </li>
 
-          <button type="button" className="ad-nav-link">
-            <img src="/assets/campaign.png" alt="" />
-            <span>CAMPAIGN MANAGER</span>
-          </button>
+      <li onClick={() => navigate("/campaign-timeline")}>
+        <img src="/assets/campaign.png" alt="campaign" className="nav-icon" />
+        CAMPAIGN MANAGER
+      </li>
 
-          <button type="button" className="ad-nav-link is-active">
-            <img src="/assets/analytics.png" alt="" />
-            <span>ANALYTICS</span>
-          </button>
+      <li className="active" onClick={() => navigate("/analytics")}>
+        <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
+        ANALYTICS
+      </li>
 
-          <button type="button" className="ad-nav-link">
-            <img src="/assets/competition.png" alt="" />
-            <span>COMPETITORS</span>
-          </button>
+      <li onClick={() => navigate("/competitor-analysis")} style={{ cursor: "pointer" }}>
+        <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
+        COMPETITORS
+      </li>
 
-          <button type="button" className="ad-nav-link">
-            <img src="/assets/settings.png" alt="" />
-            <span>SETTINGS &amp; SUPPORT</span>
-          </button>
-        </nav>
+      <li onClick={() => navigate("/settings")}>
+        <img src="/assets/settings.png" alt="settings" className="nav-icon" />
+        SETTINGS
+      </li>
+    </ul>
+  </nav>
 
-        <button type="button" className="ad-new-btn">
-          + NEW CAMPAIGN
-        </button>
-      </aside>
+  <button className="campaign-btn">+ NEW CAMPAIGN</button>
+</aside>
 
       <main className="ad-main">
         <header className="ad-topbar">
@@ -88,9 +88,12 @@ const AnalyticsDense = () => {
                   DENSE
                 </button>
 
-                <button type="button">
-                  RELAXED
-                </button>
+<button 
+  type="button" 
+  onClick={() => navigate("/Analytics")}
+>
+  RELAXED
+</button>
               </div>
             </div>
           </div>

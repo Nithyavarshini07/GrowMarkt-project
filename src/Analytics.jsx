@@ -6,37 +6,43 @@ const Analytics = () => {
   return (
     <div className="analytics-page">
       {/* SIDEBAR */}
-      <aside className="analytics-sidebar">
-       <div className="logo-section">
-  <h2 className="logo">GrowMarkt</h2>
-  <p className="tagline">THE DATA CURATOR</p>
-</div>
-        <nav>
-          <ul>
-            <li>
-              <img src="/assets/dashboard.png" className="nav-icon" alt="" />
-              DASHBOARD
-            </li>
-            <li>
-              <img src="/assets/campaign.png" className="nav-icon" alt="" />
-              CAMPAIGN MANAGER
-            </li>
-            <li className="active">
-              <img src="/assets/analytics.png" className="nav-icon" alt="" />
-              ANALYTICS
-            </li>
-            <li>
-              <img src="/assets/competition.png" className="nav-icon" alt="" />
-              COMPETITORS
-            </li>
-            <li>
-              <img src="/assets/settings.png" className="nav-icon" alt="" />
-              SETTINGS
-            </li>
-          </ul>
-        </nav>
-        <button className="campaign-btn">+ NEW CAMPAIGN</button>
-      </aside>
+<aside className="sidebar">
+  <div className="brand-header">
+    <span className="brand-main">GrowMarkt</span>
+    <span className="brand-subtitle">THE DATA CURATOR</span>
+  </div>
+
+  <nav>
+    <ul>
+      <li onClick={() => navigate("/dashboard")}>
+        <img src="/assets/dashboard.png" alt="dashboard" className="nav-icon" />
+        DASHBOARD
+      </li>
+
+      <li onClick={() => navigate("/campaign-timeline")}>
+        <img src="/assets/campaign.png" alt="campaign" className="nav-icon" />
+        CAMPAIGN MANAGER
+      </li>
+
+      <li className="active" onClick={() => navigate("/analytics")}>
+        <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
+        ANALYTICS
+      </li>
+
+      <li onClick={() => navigate("/competitor-analysis")} style={{ cursor: "pointer" }}>
+        <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
+        COMPETITORS
+      </li>
+
+      <li onClick={() => navigate("/settings")}>
+        <img src="/assets/settings.png" alt="settings" className="nav-icon" />
+        SETTINGS
+      </li>
+    </ul>
+  </nav>
+
+  <button className="campaign-btn">+ NEW CAMPAIGN</button>
+</aside>
 
       {/* MAIN */}
       <div className="analytics-main">
