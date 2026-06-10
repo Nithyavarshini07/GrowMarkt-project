@@ -136,6 +136,27 @@
   align-items:center;
   gap:12px;
 }
+.pi-notif-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pi-notif-icon img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+.pi-dot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 6px;
+  height: 6px;
+  background-color: #EF4444;
+  border-radius: 50%;
+}
 
 .pi-user-text{
   display:flex;
@@ -150,6 +171,13 @@
   gap:8px;
 }
 
+.pi-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 30%;
+  object-fit: cover;
+  background: #10b981;
+}
 .pi-leaf{
   width:18px;
   height:18px;
@@ -161,19 +189,16 @@
   font-weight:700;
   color:#1e293b;
 }
-
+.pi-user-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .pi-user-tier{
   font-size:10px;
   font-weight:700;
   letter-spacing:.12em;
   color:#94a3b8;
-}
-
-.pi-avatar{
-  width:28px;
-  height:28px;
-  border-radius:10px;
-  background:#0f172a;
 }
 
 .pi-body{

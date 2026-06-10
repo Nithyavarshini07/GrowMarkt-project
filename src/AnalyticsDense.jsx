@@ -4,7 +4,23 @@ import "./AnalyticsDense.css";
 
 const AnalyticsDense = () => {
   const navigate = useNavigate();
-
+function IconSearch(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M10.8 18.2a7.4 7.4 0 1 0 0-14.8 7.4 7.4 0 0 0 0 14.8Z"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path
+        d="M20.4 20.4l-3.9-3.9"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
   return (
     <div className="ad-page">
 <aside className="sidebar">
@@ -47,24 +63,27 @@ const AnalyticsDense = () => {
 
       <main className="ad-main">
         <header className="ad-topbar">
-          <div className="ad-search">
-            <span className="ad-search-glyph">⌕</span>
-            <input value="Search data..." readOnly />
-          </div>
+  <div className="search-container">
+    <span className="search-icon">
+      <IconSearch />
+    </span>
+    <input placeholder="Search data..." />
+  </div>
 
-          <div className="ad-profile">
-            <span className="ad-profile-bell">•</span>
-
-            <div className="ad-profile-text">
-              <strong>Alex Mercer</strong>
-              <small>PREMIUM CURATOR</small>
-            </div>
-
-            <div className="ad-profile-avatar">
-              <img src="/assets/settings.png" alt="" />
-            </div>
-          </div>
-        </header>
+  <div className="user-profile">
+    <div className="user-profile-left">
+      <div className="notif-icon">
+        <img src="/assets/bell.png" alt="notification" />
+        <span className="dot"></span>
+      </div>
+      <div className="profile-info">
+        <p className="user-name">Alex Mercer</p>
+        <p className="user-role">PREMIUM CURATOR</p>
+      </div>
+    </div>
+    <img src="/assets/alex.jpg" alt="avatar" className="avatar" />
+  </div>
+</header>
 
         <section className="ad-body">
           <div className="ad-head-row">

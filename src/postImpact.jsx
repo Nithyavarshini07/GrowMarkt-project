@@ -208,37 +208,40 @@ export default function PostImpact() {
       </aside>
 
       <main className="pi-main">
-        <header className="pi-topbar">
-          <div className="pi-search">
-            <svg className="pi-search-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M10.5 18.5a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.7"
-              />
-              <path
-                d="M16.9 16.9 21 21"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.7"
-                strokeLinecap="round"
-              />
-            </svg>
-            <input value="Search data..." readOnly />
-          </div>
+<header className="pi-topbar">
+  <div className="pi-search">
+    <svg className="pi-search-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M10.5 18.5a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.7"
+      />
+      <path
+        d="M16.9 16.9 21 21"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+      />
+    </svg>
+    <input value="Search data..." readOnly />
+  </div>
 
-          <div className="pi-user-area">
-            <div className="pi-user-text">
-              <div className="pi-user-name-row">
-                 <img src="/assets/bell.png" alt="notification" />
-                <span className="pi-user-name">Alex Mercer</span>
-              </div>
-              <div className="pi-user-tier">PREMIUM CURATOR</div>
-            </div>
-            <div className="pi-avatar" aria-hidden="true" />
-          </div>
-        </header>
+  <div className="pi-user-area">
+    <div className="pi-user-text">
+      <div className="pi-user-name-row">
+        <div className="pi-notif-icon">
+          <img src="/assets/bell.png" alt="notification" />
+          <span className="pi-dot"></span>
+        </div>
+        <span className="pi-user-name">Alex Mercer</span>
+      </div>
+      <div className="pi-user-tier">PREMIUM CURATOR</div>
+    </div>
+    <img src="/assets/alex.jpg" alt="avatar" className="pi-avatar" />
+  </div>
+</header>
 
         <section className="pi-body">
           <section className="pi-post-card">
