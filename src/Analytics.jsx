@@ -250,7 +250,7 @@ const Analytics = () => {
     {/* Node 1 */}
     <div className="node-item">
       <div className="node-thumb">
-  <img src="/assets/black.png" alt="Organic Reach" />
+  <img src="/assets/topp1.jpg" alt="Organic Reach" />
 </div>
       <div className="node-info">
         <strong>Organic Reach Surge</strong>
@@ -264,7 +264,7 @@ const Analytics = () => {
     {/* Node 2 */}
     <div className="node-item">
       <div className="node-thumb">
-  <img src="/assets/node2.png" alt="Article" />
+  <img src="/assets/topp2.jpg" alt="Article" />
 </div>
       <div className="node-info">
         <strong>Curator Ethos Article</strong>

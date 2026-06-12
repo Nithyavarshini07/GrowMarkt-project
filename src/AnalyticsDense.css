@@ -3,8 +3,8 @@
   height: 100vh;
   overflow: hidden;
   display: flex;
-  background: #f3f5fa;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f7fb;
+  font-family: Inter, sans-serif;
   color: #21324d;
 }
 
@@ -95,18 +95,24 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 18px 24px;
+  background: #f5f7fb;
 }
 
-/* Ad Topbar - matching dashboard style */
+/* Topbar — matches Analytics .analytics-topbar spacing */
 .ad-topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   margin-bottom: 25px;
+  flex-shrink: 0;
 }
 
-.ad-topbar .search-container {
+.ad-search-container {
   position: relative;
   display: flex;
   align-items: center;
@@ -114,9 +120,11 @@
   background: #ffffff;
   border-radius: 10px;
   border: 1px solid #e2e8f0;
+  margin-left: 5px;
+  flex-shrink: 0;
 }
 
-.ad-topbar .search-icon {
+.ad-search-icon {
   position: absolute;
   left: 14px;
   top: 50%;
@@ -127,14 +135,14 @@
   pointer-events: none;
 }
 
-.ad-topbar .search-icon svg {
+.ad-search-icon svg {
   width: 18px;
   height: 18px;
   display: block;
   color: #94a3b8;
 }
 
-.ad-topbar .search-container input {
+.ad-search-container input {
   width: 350px;
   height: 44px;
   border: none;
@@ -145,12 +153,12 @@
   color: #0f172a;
 }
 
-.ad-topbar .search-container input:focus {
+.ad-search-container:focus-within {
   border-color: #aa3bff;
   box-shadow: 0 0 0 3px rgba(170, 59, 255, 0.12);
 }
 
-.ad-topbar .user-profile {
+.ad-user-profile {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -159,68 +167,68 @@
   padding-left: 14px;
 }
 
-.ad-topbar .user-profile::before {
+.ad-user-profile::before {
   content: "";
   position: absolute;
   left: 0;
   height: 32px;
   width: 1px;
-  background-color: #E2E8F0;
+  background-color: #e2e8f0;
 }
 
-.ad-topbar .user-profile-left {
+.ad-user-profile-left {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.ad-topbar .notif-icon {
+.ad-notif-icon {
   position: relative;
 }
 
-.ad-topbar .notif-icon img {
+.ad-notif-icon img {
   width: 18px;
   height: 18px;
 }
 
-.ad-topbar .dot {
+.ad-dot {
   position: absolute;
   top: -2px;
   right: -2px;
   width: 6px;
   height: 6px;
-  background-color: #EF4444;
+  background-color: #ef4444;
   border-radius: 50%;
 }
 
-.ad-topbar .profile-info {
+.ad-profile-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
 }
 
-.ad-topbar .user-name {
+.ad-user-name {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 14px;
-  color: #0F172A;
+  color: #0f172a;
   margin: 0;
   line-height: 1.2;
 }
 
-.ad-topbar .user-role {
+.ad-user-role {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 10px;
-  color: #94A3B8;
+  color: #94a3b8;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0;
   line-height: 1.2;
 }
 
-.ad-topbar .avatar {
+.ad-avatar {
   width: 45px;
   height: 45px;
   border-radius: 30%;
@@ -237,6 +245,7 @@
   align-items: center;
   padding: 0 10px;
   gap: 7px;
+ margin-left: 5 !important;
 }
 
 .ad-search-glyph {
@@ -304,71 +313,128 @@
 
 .ad-body {
   flex: 1;
-  overflow: hidden;
+  min-height: 0;
+  overflow: visible;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 14px 12px 12px;
+  gap: 16px;
+  padding: 0;
 }
 
 .ad-head-row {
-  height: 28px;
+  min-height: 34px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 4px 0 38px;
 }
 
 .ad-head-left {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
 }
 
 .ad-crumb {
-  font-size: 13px;
-  color: #6e7f9a;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1;
   font-weight: 700;
-  letter-spacing: 0.35px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: #212b3a;
+}
+
+.ad-header-divider {
+  width: 1px;
+  height: 14px;
+  margin: 0 14px 0 15px;
+  background: #d9e1ec;
+  flex-shrink: 0;
 }
 
 .ad-add-btn,
 .ad-range-btn {
-  height: 26px;
-  border: 1px solid #d5ddec;
+  height: 28px;
+  border: 1px solid #dfe5ef;
   background: #ffffff;
-  border-radius: 4px;
-  padding: 0 11px;
-  font-size: 12px;
-  color: #2a3957;
+  border-radius: 7px;
+  padding: 0 10px;
+  font-size: 9.5px;
+  color: #526076;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ad-add-btn {
+  min-width: 90px;
+  gap: 5px;
+}
+
+.ad-btn-plus {
+  font-size: 11px;
+  font-weight: 700;
+  color: #617084;
+  line-height: 1;
+}
+
+.ad-range-btn {
+  min-width: 110px;
+  gap: 6px;
+}
+
+.ad-date-icon {
+  width: 10px;
+  height: 10px;
+  border: 1.4px solid #98a4b6;
+  border-radius: 2px;
+  box-sizing: border-box;
+  box-shadow: inset 0 2.8px 0 #98a4b6;
+  display: inline-block;
+  flex-shrink: 0;
 }
 
 .ad-head-right {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
 }
 
 .ad-density-toggle {
-  display: flex;
-  border: 1px solid #d6deed;
-  border-radius: 4px;
-  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 2px;
+  border: 1px solid #dfe5ef;
+  border-radius: 7px;
+  background: #f4f7fb;
+  gap: 2px;
 }
 
 .ad-density-toggle button {
-  width: 56px;
-  height: 26px;
+  min-width: 57px;
+  height: 22px;
   border: 0;
-  background: #f4f7fc;
-  color: #97a8bf;
-  font-size: 11px;
+  border-radius: 5px;
+  background: transparent;
+  color: #90a0b2;
+  font-size: 9.5px;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0 10px;
+  cursor: pointer;
 }
 
 .ad-density-toggle button.is-active {
   background: #ffffff;
-  color: #263753;
+  color: #3b475b;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.1);
 }
 
 /* =========================
@@ -376,63 +442,71 @@ TOP METRIC ROW EXACT MATCH
 ========================= */
 
 .ad-metric-row {
-  height: 96px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
+  gap: 14px;
 }
 
 .ad-card {
   min-width: 0;
-  height: 100%;
-  padding: 9px 11px 8px;
-  border: 1px solid #dfe6f2;
-  border-radius: 8px;
-  background: #fbfdff;
+  height: 116px;
+  padding: 11px 13px 10px;
+  border: 1px solid #e7ecf2;
+  border-radius: 9px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
 .ad-card-title {
-  display: flex;
+  display: inline-flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-start;
+  width: 100%;
+  margin: 0;
+  gap: 5px;
   font-size: 10px;
   font-weight: 700;
-  color: #a4b0c2;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #97a2b2;
   line-height: 1.1;
 }
 
 .ad-card-value-wrap {
+  margin-top: 9px;
   display: flex;
-  align-items: flex-end;
-  gap: 5px;
-  margin-top: 7px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
 }
 
 .ad-card h2 {
   margin: 0;
-  font-size: 33px;
-  line-height: 1;
+  font-size: 34px;
+  line-height: 0.95;
   font-weight: 700;
-  color: #162740;
+  letter-spacing: -0.02em;
+  color: #121d2f;
 }
 
 .ad-card em {
   font-style: normal;
-  font-size: 12px;
+  margin-top: 2px;
+  font-size: 10px;
+  line-height: 1;
   font-weight: 700;
+  letter-spacing: 0.02em;
   color: #10bb89;
-  margin-bottom: 4px;
 }
 
 .ad-card em.is-red {
   color: #f0616a;
 }
 
-/* platform header */
+/* platform header — mirrors .analytics-main .card .metric-label */
 
 .ad-platform-top {
   display: flex;
@@ -442,7 +516,7 @@ TOP METRIC ROW EXACT MATCH
 }
 
 .ad-platform-top div {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 5px;
 }
@@ -450,32 +524,49 @@ TOP METRIC ROW EXACT MATCH
 .ad-platform-top img {
   width: 11px;
   height: 11px;
+  object-fit: contain;
 }
 
 .ad-platform-top span {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 700;
-  color: #354866;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #97a2b2;
+  line-height: 1.1;
+}
+
+.ad-platform-top em {
+  margin-top: 2px;
+  font-size: 10px;
   line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #10bb89;
+}
+
+.ad-platform-top em.is-red {
+  color: #f0616a;
 }
 
 .ad-card-platform h2 {
-  margin-top: 8px;
-  font-size: 33px;
+  margin-top: 9px;
+  font-size: 34px;
+  line-height: 0.95;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #121d2f;
 }
 
 .ad-card-graph-wrap {
   margin-top: auto;
-  padding-top: 9px;
   width: 100%;
-  min-height: 24px;
-  display: flex;
-  align-items: flex-end;
 }
 
 .ad-card-spark {
-  height: 22px;
   width: 100%;
+  height: 28px;
+  margin-top: 8px;
   display: block;
   overflow: visible;
 }
@@ -484,6 +575,7 @@ TOP METRIC ROW EXACT MATCH
   fill: none;
   stroke-width: 2;
   stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .ad-green-line path {
@@ -519,11 +611,9 @@ TOP METRIC ROW EXACT MATCH
 }
 
 .ad-middle-row {
-  height: 222px;
   display: grid;
-  grid-template-columns: minmax(0, 73%) minmax(0, 27%);
-  gap: 12px;
-  margin-bottom: 32px;
+  grid-template-columns: 2.15fr 0.9fr;
+  gap: 16px;
   align-items: stretch;
 }
 
@@ -531,44 +621,52 @@ TOP METRIC ROW EXACT MATCH
 .ad-nodes-box,
 .ad-bottom-box {
   background: #fff;
-  border: 1px solid #dfe6f2;
-  border-radius: 8px;
+  border: 1px solid #eef2f7;
+  border-radius: 16px;
 }
 
 .ad-growth-box {
-  height: 100%;
-  padding: 10px 10px 8px;
+  height: 390px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
 }
 
 .ad-growth-head {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .ad-growth-head h3 {
   margin: 0;
-  font-size: 12px;
-  color: #4b5e79;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.2;
 }
 
 .ad-growth-icons {
+  display: flex;
+  gap: 10px;
+  color: #94a3b8;
   font-size: 14px;
-  color: #9caec5;
-  letter-spacing: 2px;
+  cursor: pointer;
 }
 
 .ad-growth-chart-wrap {
-  height: 190px;
-  margin-top: 8px;
-  border: 1px solid #edf2f9;
-  border-radius: 4px;
+  height: 250px;
+  margin-top: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  box-sizing: border-box;
 }
 
 .ad-growth-chart {
   width: 100%;
   height: 100%;
+  display: block;
 }
 
 .ad-growth-chart line {
@@ -591,102 +689,125 @@ TOP METRIC ROW EXACT MATCH
 
 .ad-growth-chart text {
   fill: #9dadc2;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
 }
 
 .ad-nodes-box {
-  height: 100%;
-  padding: 10px 9px;
+  height: 390px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .ad-nodes-head {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.ad-nodes-head div {
+.ad-nodes-head > div {
   display: flex;
-  align-items: center;
-  gap: 4px;
+  align-items: flex-start;
+  gap: 10px;
 }
 
 .ad-nodes-head img {
-  width: 12px;
-  height: 12px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 .ad-nodes-head span {
-  font-size: 12px;
-  font-weight: 700;
-  color: #4b5d78;
+  font-size: 13px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.2;
+  width: 100px;
 }
 
 .ad-nodes-head button {
   border: 0;
   padding: 0;
   background: transparent;
-  color: #14b486;
   font-size: 11px;
   font-weight: 700;
+  color: #14b486;
+  cursor: pointer;
+}
+
+.ad-node-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
 }
 
 .ad-node-row {
-  margin-top: 11px;
-  display: grid;
-  grid-template-columns: 34px 1fr 12px;
+  display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 12px;
 }
 
 .ad-node-thumb {
-  width: 34px;
-  height: 34px;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
   object-fit: cover;
-  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .ad-node-copy {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
 .ad-node-copy strong {
-  font-size: 12px;
-  color: #1f304b;
+  display: block;
+  font-size: 14px;
+  color: #1e293b;
+  margin-bottom: 2px;
 }
 
 .ad-node-copy small {
-  font-size: 10px;
-  color: #8393ab;
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0;
 }
 
 .ad-node-trend {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
 .ad-benchmark-row {
-  margin-top: auto;
-  border-top: 1px solid #edf2f9;
-  padding-top: 10px;
+  border-top: 1px solid #f8fafc;
+  padding-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.ad-benchmark-row span {
+.ad-benchmark-label {
   font-size: 11px;
-  color: #9eafc4;
   font-weight: 700;
+  color: #9eafc4;
+  width: 80px;
 }
 
-.ad-benchmark-row strong {
-  font-size: 12px;
+.ad-benchmark-tag {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 8px 12px;
+  border-radius: 8px;
+  flex: 1;
+  text-align: center;
   color: #13b889;
 }
 
@@ -695,40 +816,46 @@ TOP METRIC ROW EXACT MATCH
   min-height: 0;
   display: flex;
   flex-direction: column;
-  margin-top: 0;
+  margin-top: 6px;
+  border-radius: 16px;
+  padding: 0;
 }
 
 .ad-bottom-head {
-  height: 40px;
-  border-bottom: 1px solid #edf2f9;
   display: flex;
-  align-items: center;
-  padding: 0 12px;
-  gap: 8px;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  padding: 0;
+  border-bottom: none;
+  gap: 10px;
 }
 
 .ad-bottom-title {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
-  color: #4b5d79;
+  margin: 0;
+  color: #1e293b;
 }
 
 .ad-bottom-filters,
 .ad-bottom-actions {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 .ad-bottom-head button {
-  height: 20px;
-  border: 1px solid #d6deec;
-  background: #f8fbff;
-  border-radius: 2px;
-  padding: 0 7px;
-  font-size: 10px;
-  color: #4a5f7c;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 11px;
   font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  height: auto;
+  line-height: 1;
 }
 
 .ad-bottom-actions {
@@ -736,25 +863,38 @@ TOP METRIC ROW EXACT MATCH
 }
 
 .ad-table-row {
-  height: 38px;
-  border-bottom: 1px solid #edf2f9;
-  padding: 0 12px;
   display: grid;
   grid-template-columns: 1.6fr 1fr 0.8fr 1fr 1fr 0.4fr;
   align-items: center;
-  color: #3d506d;
-  font-size: 12px;
+  background: #ffffff;
+  padding: 16px 24px;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  border: 1px solid #eef2f7;
+  color: #1e293b;
+  font-size: 14px;
 }
 
 .ad-table-row strong {
-  color: #233752;
-  font-size: 13px;
+  font-weight: 800;
+  font-size: 15px;
+  color: #1e293b;
+}
+
+.ad-table-row span {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #1e293b;
 }
 
 .ad-table-row em {
   font-style: normal;
+  font-size: 14px;
   font-weight: 700;
-  font-size: 13px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }
 
 .ad-table-row em.is-green {
@@ -766,15 +906,26 @@ TOP METRIC ROW EXACT MATCH
 }
 
 .ad-table-head-row {
-  height: 28px;
-  color: #97a9c0;
-  font-size: 10px;
+  min-height: auto;
+  margin-bottom: 12px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.ad-table-head-row span {
+  font-size: 9px;
   font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .ad-daily-trend {
-  width: 70px;
-  height: 16px;
+  width: 120px;
+  height: 40px;
 }
 
 .ad-daily-trend path {
@@ -790,25 +941,26 @@ TOP METRIC ROW EXACT MATCH
 
 .ad-kebab {
   text-align: center;
-  color: #8ea0b8;
+  color: #cbd5e1;
+  font-size: 24px;
+  line-height: 1;
 }
 
 .ad-bottom-foot {
   margin-top: auto;
-  height: 24px;
-  padding: 0 12px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #9cb0c7;
-  font-size: 10px;
-  font-weight: 700;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .ad-bottom-foot div {
   display: flex;
   gap: 10px;
-  color: #8ca0b8;
-  font-size: 18px;
+  color: #64748b;
+  font-size: 12px;
   line-height: 1;
 }

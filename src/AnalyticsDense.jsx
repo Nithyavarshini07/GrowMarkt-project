@@ -63,27 +63,27 @@ function IconSearch(props) {
 
       <main className="ad-main">
         <header className="ad-topbar">
-  <div className="search-container">
-    <span className="search-icon">
-      <IconSearch />
-    </span>
-    <input placeholder="Search data..." />
-  </div>
+          <div className="ad-search-container">
+            <span className="ad-search-icon">
+              <IconSearch />
+            </span>
+            <input placeholder="Search insights..." />
+          </div>
 
-  <div className="user-profile">
-    <div className="user-profile-left">
-      <div className="notif-icon">
-        <img src="/assets/bell.png" alt="notification" />
-        <span className="dot"></span>
-      </div>
-      <div className="profile-info">
-        <p className="user-name">Alex Mercer</p>
-        <p className="user-role">PREMIUM CURATOR</p>
-      </div>
-    </div>
-    <img src="/assets/alex.jpg" alt="avatar" className="avatar" />
-  </div>
-</header>
+          <div className="ad-user-profile">
+            <div className="ad-user-profile-left">
+              <div className="ad-notif-icon">
+                <img src="/assets/bell.png" alt="notification" />
+                <span className="ad-dot"></span>
+              </div>
+              <div className="ad-profile-info">
+                <p className="ad-user-name">Alex Mercer</p>
+                <p className="ad-user-role">PREMIUM CURATOR</p>
+              </div>
+            </div>
+            <img src="/assets/alex.jpg" alt="avatar" className="ad-avatar" />
+          </div>
+        </header>
 
         <section className="ad-body">
           <div className="ad-head-row">
@@ -91,15 +91,18 @@ function IconSearch(props) {
               <span className="ad-crumb">
                 WORKSPACE / GROWTH TRACKING
               </span>
+              <span className="ad-header-divider" aria-hidden="true" />
 
               <button type="button" className="ad-add-btn">
-                + ADD METRIC
+                <span className="ad-btn-plus" aria-hidden="true">+</span>
+                <span>ADD METRIC</span>
               </button>
             </div>
 
             <div className="ad-head-right">
               <button type="button" className="ad-range-btn">
-                LAST 30 DAYS
+                <span className="ad-date-icon" aria-hidden="true" />
+                <span>LAST 30 DAYS</span>
               </button>
 
               <div className="ad-density-toggle">
@@ -264,47 +267,49 @@ function IconSearch(props) {
                 </button>
               </div>
 
-              <div className="ad-node-row">
-                <img
-                  src="/assets/black.png"
-                  alt=""
-                  className="ad-node-thumb"
-                />
+              <div className="ad-node-list">
+                <div className="ad-node-row">
+                  <img
+                    src="/assets/topp1.jpg"
+                    alt=""
+                    className="ad-node-thumb"
+                  />
 
-                <div className="ad-node-copy">
-                  <strong>Organic Reach Surge</strong>
-                  <small>IG Reel • 12.3k Reach</small>
+                  <div className="ad-node-copy">
+                    <strong>Organic Reach Surge</strong>
+                    <small>IG Reel • 12.3k Reach</small>
+                  </div>
+
+                  <img
+                    src="/assets/trend-up.png"
+                    alt=""
+                    className="ad-node-trend"
+                  />
                 </div>
 
-                <img
-                  src="/assets/trend-up.png"
-                  alt=""
-                  className="ad-node-trend"
-                />
-              </div>
+                <div className="ad-node-row">
+                  <img
+                    src="/assets/topp2.jpg"
+                    alt=""
+                    className="ad-node-thumb"
+                  />
 
-              <div className="ad-node-row">
-                <img
-                  src="/assets/node2.png"
-                  alt=""
-                  className="ad-node-thumb"
-                />
+                  <div className="ad-node-copy">
+                    <strong>Curator Ethos Article</strong>
+                    <small>LI Article • 8.4k Views</small>
+                  </div>
 
-                <div className="ad-node-copy">
-                  <strong>Curator Ethos Article</strong>
-                  <small>LI Article • 8.4k Views</small>
+                  <img
+                    src="/assets/trend-up.png"
+                    alt=""
+                    className="ad-node-trend"
+                  />
                 </div>
-
-                <img
-                  src="/assets/trend-up.png"
-                  alt=""
-                  className="ad-node-trend"
-                />
               </div>
 
               <div className="ad-benchmark-row">
-                <span>BENCHMARK STATUS</span>
-                <strong>OUTPERFORMING (+8%)</strong>
+                <span className="ad-benchmark-label">BENCHMARK STATUS</span>
+                <strong className="ad-benchmark-tag">OUTPERFORMING (+8%)</strong>
               </div>
             </aside>
           </div>

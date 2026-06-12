@@ -21,6 +21,7 @@
   background: #ffffff;
   border-radius: 10px;
   border: 1px solid #e2e8f0;
+  margin-left: 5px;
 }
 .analytics-topbar .search-icon {
   position: absolute;
@@ -266,13 +267,6 @@
 
 
 
-/* TOPBAR */
-
-
-
-/* HEADER */
-
-
 .analytics-header button {
   background: black;
   color: white;
@@ -444,8 +438,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 5px;     /* 🔥 reduce */
-  margin-bottom: 0;
+  
+    margin-bottom: 8px !important;
+  padding-bottom: 0 !important;
+    margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
 
@@ -499,6 +496,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 8px !important;
+  padding-bottom: 0 !important;
 }
 
 .analytics-topbar input {

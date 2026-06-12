@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import "./postImpact.css";
@@ -157,6 +157,10 @@ function LeafIcon() {
 
 export default function PostImpact() {
   const navigate = useNavigate();
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+  
 
   return (
     <div className="pi-page">
@@ -169,10 +173,10 @@ export default function PostImpact() {
 
         <nav>
           <ul>
-            <li className="active">
-              <img src="/assets/dashboard.png" alt="dashboard" className="nav-icon" />
-              DASHBOARD
-            </li>
+    <li onClick={() => navigate("/dashboard")}>
+      <img src="/assets/dashboard.png" alt="dashboard" className="nav-icon" />
+      DASHBOARD
+    </li>
 
 <li onClick={() => navigate("/campaign-timeline")}>
   <img
@@ -183,10 +187,10 @@ export default function PostImpact() {
   CAMPAIGN MANAGER
 </li>
 
-<li onClick={() => navigate("/analytics")}>
-  <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
-  ANALYTICS
-</li>
+    <li onClick={() => navigate("/analytics")} className="active">
+      <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
+      ANALYTICS
+    </li>
 
 <li onClick={() => navigate("/competitor-analysis")} style={{ cursor: "pointer" }}>
   <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
@@ -244,6 +248,17 @@ export default function PostImpact() {
 </header>
 
         <section className="pi-body">
+
+  <button
+    type="button"
+    className="mp-back"
+    onClick={() => navigate("/analytics")}
+  >
+    <span className="mp-back-arrow" aria-hidden="true">
+      ←
+    </span>
+    Back to Main Analytics
+  </button>
           <section className="pi-post-card">
             <div className="pi-post-top">
               <div className="pi-post-badge">

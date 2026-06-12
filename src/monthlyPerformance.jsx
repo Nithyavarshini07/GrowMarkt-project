@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import "./monthlyPerformance.css";
@@ -111,6 +111,30 @@ function NavIcon({ kind }) {
       </svg>
     );
   }
+  function IconSearch(props) {
+  return (
+    <svg 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      aria-hidden="true" 
+      width="18" 
+      height="18"
+      {...props}
+    >
+      <path
+        d="M10.8 18.2a7.4 7.4 0 1 0 0-14.8 7.4 7.4 0 0 0 0 14.8Z"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path
+        d="M20.4 20.4l-3.9-3.9"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
 
   return (
     <svg className="mp-nav-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -157,6 +181,9 @@ function LeafIcon() {
 
 export default function MonthlyPerformance() {
   const navigate = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="mp-page">
@@ -169,10 +196,10 @@ export default function MonthlyPerformance() {
 
         <nav>
           <ul>
-            <li className="active">
-              <img src="/assets/dashboard.png" alt="dashboard" className="nav-icon" />
-              DASHBOARD
-            </li>
+    <li onClick={() => navigate("/dashboard")}>
+      <img src="/assets/dashboard.png" alt="dashboard" className="nav-icon" />
+      DASHBOARD
+    </li>
 
 <li onClick={() => navigate("/campaign-timeline")}>
   <img
@@ -183,10 +210,10 @@ export default function MonthlyPerformance() {
   CAMPAIGN MANAGER
 </li>
 
-<li onClick={() => navigate("/analytics")}>
-  <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
-  ANALYTICS
-</li>
+    <li onClick={() => navigate("/analytics")} className="active">
+      <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
+      ANALYTICS
+    </li>
 
 <li onClick={() => navigate("/competitor-analysis")} style={{ cursor: "pointer" }}>
   <img src="/assets/competition.png" alt="competitors" className="nav-icon" />
@@ -208,37 +235,31 @@ export default function MonthlyPerformance() {
       </aside>
 
       <main className="mp-main">
-        <header className="mp-topbar">
-          <div className="mp-search">
-            <svg className="mp-search-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M10.5 18.5a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.7"
-              />
-              <path
-                d="M16.9 16.9 21 21"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.7"
-                strokeLinecap="round"
-              />
-            </svg>
-            <input value="Search analytics..." readOnly />
-          </div>
+<header className="topbar">
+  <div className="search-container">
+    <span className="search-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="10.5" cy="10.5" r="7.5"/>
+        <line x1="16" y1="16" x2="22" y2="22"/>
+      </svg>
+    </span>
+    <input placeholder="Search analytics..." />
+  </div>
 
-          <div className="mp-user-area">
-            <div className="mp-user-text">
-              <div className="mp-user-name-row">
-                <LeafIcon />
-                <span className="mp-user-name">Alex Mercer</span>
-              </div>
-              <div className="mp-user-tier">PREMIUM CURATOR</div>
-            </div>
-            <div className="mp-avatar" aria-hidden="true" />
-          </div>
-        </header>
+  <div className="user-profile">
+    <div className="user-profile-left">
+      <div className="notif-icon">
+        <img src="/assets/bell.png" alt="notification" />
+        <span className="dot"></span>
+      </div>
+      <div className="profile-info">
+        <p className="user-name">Alex Mercer</p>
+        <p className="user-role">PREMIUM CURATOR</p>
+      </div>
+    </div>
+    <img src="/assets/alex.jpg" alt="avatar" className="avatar" />
+  </div>
+</header>
 
         <section className="mp-body">
           <button

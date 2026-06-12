@@ -3,6 +3,31 @@ import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import "./performanceNodesLibrary.css";
 
+function IconSearch(props) {
+  return (
+    <svg 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      aria-hidden="true" 
+      width="18" 
+      height="18"
+      {...props}
+    >
+      <path
+        d="M10.8 18.2a7.4 7.4 0 1 0 0-14.8 7.4 7.4 0 0 0 0 14.8Z"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path
+        d="M20.4 20.4l-3.9-3.9"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 const platformTabs = [
   { key: "ALL", label: "ALL" },
   { key: "INSTAGRAM", label: "INSTAGRAM" },
@@ -270,6 +295,7 @@ function ShareIcon() {
 export default function PerformanceNodesLibrary({ nodes = defaultNodes }) {
   const [activeTab, setActiveTab] = useState("ALL");
   const navigate = useNavigate();
+  
 
   const filtered = useMemo(() => {
     if (activeTab === "ALL") return nodes;
@@ -287,10 +313,10 @@ export default function PerformanceNodesLibrary({ nodes = defaultNodes }) {
 
         <nav>
           <ul>
-            <li className="active">
-              <img src="/assets/dashboard.png" alt="dashboard" className="nav-icon" />
-              DASHBOARD
-            </li>
+    <li onClick={() => navigate("/dashboard")}>
+      <img src="/assets/dashboard.png" alt="dashboard" className="nav-icon" />
+      DASHBOARD
+    </li>
 
 <li onClick={() => navigate("/campaign-timeline")}>
   <img
@@ -301,7 +327,7 @@ export default function PerformanceNodesLibrary({ nodes = defaultNodes }) {
   CAMPAIGN MANAGER
 </li>
 
-<li onClick={() => navigate("/analytics")}>
+<li onClick={() => navigate("/analytics")} className="active">
   <img src="/assets/analytics.png" alt="analytics" className="nav-icon" />
   ANALYTICS
 </li>
@@ -327,59 +353,43 @@ export default function PerformanceNodesLibrary({ nodes = defaultNodes }) {
 
       <main className="pnl-main">
 
-        <div className="pnl-topbar">
-          <div className="pnl-search-wrap">
-            <div className="pnl-search">
-              <svg className="pnl-search-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M10.5 18.5a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.7"
-                />
-                <path
-                  d="M16.9 16.9 21 21"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.7"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <input placeholder="Search data..." />
-            </div>
-          </div>
+        {/* TOPBAR */}
+<div className="topbar">
+  <div className="search-container">
+    <span className="search-icon">
+      <IconSearch />
+    </span>
+    <input placeholder="Search insights..." />
+  </div>
 
-          <div className="pnl-user-area">
-            <div className="pnl-user-text">
-              <div className="pnl-user-name-row">
-                <svg className="pnl-leaf" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M4 14c6-10 14-9 16-9-1 2-2 10-9 16-4 3-7 1-7-7Z"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.7"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M9 15c2 0 5-2 7-5"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.7"
-                    strokeLinecap="round"
-                  />
-                </svg>
-                <span className="pnl-user-name">Alex Mercer</span>
-              </div>
-              <div className="pnl-user-tier">PREMIUM CURATOR</div>
-            </div>
+  <div className="user-profile">
+    <div className="user-profile-left">
+      <div className="notif-icon">
+        <img src="/assets/bell.png" alt="notification" />
+        <span className="dot"></span>
+      </div>
+      <div className="profile-info">
+        <p className="user-name">Alex Mercer</p>
+        <p className="user-role">PREMIUM CURATOR</p>
+      </div>
+    </div>
+    <img src="/assets/alex.jpg" alt="avatar" className="avatar" />
+  </div>
+</div>
+          <button
+    type="button"
+    className="mp-back"
+    onClick={() => navigate("/analytics")}
+  >
+    <span className="mp-back-arrow" aria-hidden="true">
+      ←
+    </span>
+    Back to Main Analytics
+  </button>
 
-            <div className="pnl-avatar" aria-hidden="true" />
-          </div>
-          
-        </div>
 
         <div className="pnl-header-row">
+
                   
           <div className="pnl-header-left">
             
