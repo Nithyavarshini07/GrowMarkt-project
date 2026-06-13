@@ -124,14 +124,15 @@ function IconSearch(props) {
             <article className="ad-card ad-card-aggregate">
               <div className="ad-card-title">
                 <span>AGGREGATE REACH</span>
-                <span>...</span>
+               
               </div>
-
-              <div className="ad-card-value-wrap">
-                <h2>92.4k</h2>
-                <em>+14%</em>
-              </div>
-
+<div className="ad-platform-top">
+  <div>
+    <span>AGGREGATE REACH</span>
+  </div>
+  <em>+14%</em>
+</div>
+<h2>92.4k</h2>
               <div className="ad-card-graph-wrap">
                 <svg
                   viewBox="0 0 180 22"
@@ -250,68 +251,50 @@ function IconSearch(props) {
               </div>
             </section>
 
-            <aside className="ad-nodes-box">
-              <div className="ad-nodes-head">
-                <div>
-                  <img src="/assets/shield.png" alt="" />
-                  <span>TOP PERFORMANCE NODES</span>
-                </div>
+            <aside className="side-box"> 
+  <div className="side-box-header"> 
+    <div className="title-with-icon">  
+      <img src="/assets/shield.png" alt="" />
+      <h3>TOP PERFORMANCE NODES</h3> 
+    </div>
+    <button type="button" onClick={() => navigate("/performance-nodes")} className="view-all">
+      VIEW ALL
+    </button>
+  </div>
 
-                <button
-                  type="button"
-                  onClick={() =>
-                    navigate("/performance-nodes")
-                  }
-                >
-                  VIEW ALL
-                </button>
-              </div>
+  <div className="node-list">  
+    <div className="node-item"> 
+      <div className="node-thumb"> 
+        <img src="/assets/topp1.jpg" alt="" />
+      </div>
+      <div className="node-info"> 
+        <strong>Organic Reach Surge</strong>
+        <p>IG Reel • 12.3k Reach</p>  
+      </div>
+      <div className="node-trend">  
+        <img src="/assets/trend-up.png" alt="" />
+      </div>
+    </div>
 
-              <div className="ad-node-list">
-                <div className="ad-node-row">
-                  <img
-                    src="/assets/topp1.jpg"
-                    alt=""
-                    className="ad-node-thumb"
-                  />
+    <div className="node-item">
+      <div className="node-thumb">
+        <img src="/assets/topp2.jpg" alt="" />
+      </div>
+      <div className="node-info">
+        <strong>Curator Ethos Article</strong>
+        <p>LI Article • 8.4k Views</p>
+      </div>
+      <div className="node-trend">
+        <img src="/assets/trend-up.png" alt="" />
+      </div>
+    </div>
+  </div>
 
-                  <div className="ad-node-copy">
-                    <strong>Organic Reach Surge</strong>
-                    <small>IG Reel • 12.3k Reach</small>
-                  </div>
-
-                  <img
-                    src="/assets/trend-up.png"
-                    alt=""
-                    className="ad-node-trend"
-                  />
-                </div>
-
-                <div className="ad-node-row">
-                  <img
-                    src="/assets/topp2.jpg"
-                    alt=""
-                    className="ad-node-thumb"
-                  />
-
-                  <div className="ad-node-copy">
-                    <strong>Curator Ethos Article</strong>
-                    <small>LI Article • 8.4k Views</small>
-                  </div>
-
-                  <img
-                    src="/assets/trend-up.png"
-                    alt=""
-                    className="ad-node-trend"
-                  />
-                </div>
-              </div>
-
-              <div className="ad-benchmark-row">
-                <span className="ad-benchmark-label">BENCHMARK STATUS</span>
-                <strong className="ad-benchmark-tag">OUTPERFORMING (+8%)</strong>
-              </div>
-            </aside>
+  <div className="benchmark-section">  {/* Changed from ad-benchmark-row */}
+    <span className="benchmark-label">BENCHMARK STATUS</span>  {/* Changed class */}
+    <strong className="benchmark-tag">OUTPERFORMING (+8%)</strong>  {/* Changed class */}
+  </div>
+</aside>
           </div>
 
           <section className="ad-bottom-box">

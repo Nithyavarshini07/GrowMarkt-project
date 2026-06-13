@@ -283,20 +283,16 @@
   
 }
 
-/* CARDS 
-.analytics-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 20px;
-}
-*/
+
 
 .card {
   background: white;
   border-radius: 14px;
   padding: 16px;
   height: 118px;
+  padding-top: 40px;
   display: flex;
+    position: relative;
   flex-direction: column;
   justify-content: space-between;
   border: 1px solid #eef2f7;
@@ -737,6 +733,7 @@ svg {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
+  
 }
 .analytics-content {
   display: grid;
@@ -1214,7 +1211,7 @@ svg {
   padding: 11px 13px 10px;
   border: 1px solid #e7ecf2;
   box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
-  background: #ffffff;
+  background: #ffffff; 
 }
 
 .analytics-main .card .metric-label {
@@ -1235,13 +1232,20 @@ svg {
   height: 11px;
   object-fit: contain;
 }
+.card .metric-value-row span {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  margin: 0 !important;
+}
 
 .analytics-main .card .metric-value-row {
   margin-top: 9px;
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start !important;
   gap: 8px;
+  
 }
 
 .analytics-main .card h2 {
